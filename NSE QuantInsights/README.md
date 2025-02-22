@@ -1,7 +1,6 @@
 
 # NSE QuantInsights
 - *Bridging Predictive Modeling & Strategic Equity Decisions*
-- 
 - *Forecasting with Hybrid CNN-LSTM Architecture*
 
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)]()
