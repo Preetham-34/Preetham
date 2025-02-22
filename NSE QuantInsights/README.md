@@ -6,7 +6,7 @@
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
-![Project Structure](results/figures/project_structure.png)  
+  
 
 A robust machine learning system predicting Reliance Industries (RELIANCE.NS) stock prices with **88.7% explained variance** and generating risk-optimized trading signals achieving **1.75 Sharpe ratio**.
 
