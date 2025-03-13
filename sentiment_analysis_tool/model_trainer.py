@@ -23,7 +23,7 @@ def train_model():
     os.makedirs('models', exist_ok=True)
 
     try:
-        df = pd.read_csv('data/social_media_data.csv')
+        df = pd.read_csv('data/soentimentdataset.csv')
     except FileNotFoundError:
         print("Error: Training data not found at 'data/social_media_data.csv'")
         return
