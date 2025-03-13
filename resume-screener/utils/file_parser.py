@@ -1,27 +1,29 @@
 import io
-import PyPDF2
-from docx import Document
+import pdfplumber
+import docx2txt
+import magic
 
 def parse_resume(file):
     """Extract text from PDF or DOCX files"""
     content = file.read()
+    mime = magic.from_buffer(content, mime=True)
     
-    if file.type == "application/pdf":
+    if mime == "application/pdf":
         return parse_pdf(content)
-    elif file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+    elif mime in ["application/vnd.openxmlformats-officedocument.wordprocessingml.document", 
+                 "application/msword"]:
         return parse_docx(content)
     else:
-        raise ValueError("Unsupported file format")
+        raise ValueError(f"Unsupported file type: {mime}")
 
 def parse_pdf(content):
-    """Extract text from PDF"""
-    pdf = PyPDF2.PdfReader(io.BytesIO(content))
+    """Extract text from PDF using pdfplumber"""
     text = ""
-    for page in pdf.pages:
-        text += page.extract_text()
+    with pdfplumber.open(io.BytesIO(content)) as pdf:
+        for page in pdf.pages:
+            text += page.extract_text()
     return text
 
 def parse_docx(content):
-    """Extract text from DOCX"""
-    doc = Document(io.BytesIO(content))
-    return "\n".join([para.text for para in doc.paragraphs])
+    """Extract text from DOCX using docx2txt"""
+    return docx2txt.process(io.BytesIO(content))
