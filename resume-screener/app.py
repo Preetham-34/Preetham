@@ -7,20 +7,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 def main():
     st.set_page_config(page_title="AI Resume Screener", layout="wide")
-    
-    # Custom CSS
-    st.markdown("""
-    <style>
-    .stProgress > div > div > div {
-        background-color: #1E90FF;
-    }
-    .st-expander {
-        background: #f8f9fa;
-        border: 1px solid #dee2e6;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-    
     st.title("🤖 AI Resume Screener")
     st.markdown("---")
     
