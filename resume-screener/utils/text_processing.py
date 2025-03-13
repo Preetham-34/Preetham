@@ -3,7 +3,14 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 
-nltk.download(['stopwords', 'wordnet'])
+def check_nltk_data():
+    try:
+        stopwords.words('english')
+        WordNetLemmatizer()
+    except LookupError:
+        nltk.download(['stopwords', 'wordnet', 'omw-1.4'])
+
+check_nltk_data()  # Ensure NLTK data is downloaded
 
 def preprocess_text(text):
     """Clean and normalize text data"""
