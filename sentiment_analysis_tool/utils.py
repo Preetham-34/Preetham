@@ -71,14 +71,13 @@ def analyze_text(text, models):
     # Custom Model Analysis
     if models["CustomModel"]:
         try:
-            prediction = models["CustomModel"].predict([cleaned])[0]
-            probabilities = models["CustomModel"].predict_proba([cleaned])[0]
-            results["CustomModel"] = {
-                "label": "Positive" if prediction == 1 else "Negative",
-                "confidence": round(max(probabilities), 2)
-            }
-        except Exception as e:
-            results["CustomModel"] = {"error": str(e)}
+    models["CustomModel"] = joblib.load('models/sentiment_model.pkl')
+except FileNotFoundError:
+    st.warning("Custom model not found - using default models only")
+    models["CustomModel"] = None
+except Exception as e:
+    st.error(f"Error loading custom model: {str(e)}")
+    models["CustomModel"] = None
 
     return results
 
