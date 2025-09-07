@@ -5,6 +5,8 @@ numpy>=1.23
 requests>=2.31
 python-dotenv>=1.0
 pydantic>=2.6
+twilio>=9.0
+
 # Optional heavy libs (uncomment when using real models):
 # mediapipe
 # onnxruntime
