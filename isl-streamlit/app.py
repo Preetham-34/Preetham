@@ -19,10 +19,11 @@ from src.models.factory import Models
 from src.sms.fast2sms import send_sms_fast2sms
 from src.storage.db import insert_alert, recent_alerts
 from src.utils.fps import FpsTracker
+from src.rtc.ice import build_rtc_configuration
 
 st.set_page_config(page_title="ISL → Text (Streamlit)", layout="wide")
 
-RTC_CONFIGURATION = {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
+RTC_CONFIGURATION = build_rtc_configuration()
 MODELS = Models(mock=MOCK_MODE)
 
 # -----------------------------
