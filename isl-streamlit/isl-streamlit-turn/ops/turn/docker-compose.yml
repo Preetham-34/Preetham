@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  coturn:
+    image: instrumentisto/coturn
+    container_name: coturn
+    restart: unless-stopped
+    ports:
+      - "3478:3478/udp"   # TURN over UDP
+      - "3478:3478/tcp"   # TURN over TCP
+      # Uncomment if you add TLS certs and want TURN over TLS (recommended)
+      # - "5349:5349/tcp"
+    volumes:
+      - ./turnserver.conf:/etc/coturn/turnserver.conf:ro
+      # For TLS, mount certs:
+      # - ./certs:/certs:ro
