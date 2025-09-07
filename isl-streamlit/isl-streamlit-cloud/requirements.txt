@@ -1,0 +1,14 @@
+streamlit>=1.33
+streamlit-webrtc>=0.47
+av>=10.0.0
+numpy>=1.23
+requests>=2.31
+python-dotenv>=1.0
+pydantic>=2.6
+twilio>=9.0
+# Optional heavy libs (uncomment when you wire real models):
+# mediapipe
+# onnxruntime
+# tensorflow
+# tflite-runtime
+# opencv-python
