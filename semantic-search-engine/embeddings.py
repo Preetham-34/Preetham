@@ -1,4 +1,4 @@
-"""Embedding generation using Sentence Transformers - DeepLearning.AI best practices."""
+"""Embedding generation using Sentence Transformers - Corrected for deployment."""
 
 import logging
 import numpy as np

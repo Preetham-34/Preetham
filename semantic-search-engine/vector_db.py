@@ -1,24 +1,16 @@
-"""Pinecone vector database management - DeepLearning.AI Vector Database best practices."""
+"""Pinecone vector database management - Updated for official pinecone package."""
 
 import logging
 import time
 from typing import List, Dict, Any, Optional
 import numpy as np
-
-# Handle different Pinecone client versions
-try:
-    from pinecone import Pinecone, ServerlessSpec
-    USE_NEW_CLIENT = True
-except ImportError:
-    import pinecone
-    USE_NEW_CLIENT = False
-
+import pinecone
 from config import Config
 
 logger = logging.getLogger(__name__)
 
 class PineconeDB:
-    """Pinecone vector database manager following best practices."""
+    """Pinecone vector database manager using the official pinecone package."""
     
     def __init__(self, 
                  api_key: str = None,
@@ -38,28 +30,25 @@ class PineconeDB:
         self.dimension = Config.EMBEDDING_DIMENSION
         self.metric = Config.SIMILARITY_METRIC
         
-        self.pc = None
         self.index = None
         
         logger.info(f"Initializing Pinecone DB: {self.index_name}")
         self._initialize_client()
     
     def _initialize_client(self) -> None:
-        """Initialize Pinecone client with version compatibility."""
+        """Initialize Pinecone client using the official pinecone package."""
         try:
-            if USE_NEW_CLIENT:
-                # New Pinecone client (v3+)
-                self.pc = Pinecone(api_key=self.api_key)
-            else:
-                # Legacy Pinecone client
-                pinecone.init(api_key=self.api_key, environment=self.environment)
-                self.pc = pinecone
+            # Initialize Pinecone using the official package
+            pinecone.init(
+                api_key=self.api_key,
+                environment=self.environment
+            )
             
             # Ensure index exists
             self._ensure_index_exists()
             
             # Connect to index
-            self.index = self.pc.Index(self.index_name)
+            self.index = pinecone.Index(self.index_name)
             
             logger.info("Pinecone initialized successfully")
             
@@ -71,36 +60,17 @@ class PineconeDB:
         """Create index if it doesn't exist."""
         try:
             # Get existing indexes
-            if hasattr(self.pc, 'list_indexes'):
-                existing_indexes = self.pc.list_indexes()
-                if hasattr(existing_indexes, 'names'):
-                    index_names = existing_indexes.names()
-                else:
-                    index_names = [idx.name for idx in existing_indexes] if existing_indexes else []
-            else:
-                index_names = self.pc.list_indexes()
+            existing_indexes = pinecone.list_indexes()
             
-            if self.index_name not in index_names:
+            if self.index_name not in existing_indexes:
                 logger.info(f"Creating index: {self.index_name}")
                 
-                if USE_NEW_CLIENT:
-                    # New client with serverless spec
-                    self.pc.create_index(
-                        name=self.index_name,
-                        dimension=self.dimension,
-                        metric=self.metric,
-                        spec=ServerlessSpec(
-                            cloud='aws',
-                            region='us-west-2'
-                        )
-                    )
-                else:
-                    # Legacy client
-                    self.pc.create_index(
-                        name=self.index_name,
-                        dimension=self.dimension,
-                        metric=self.metric
-                    )
+                # Create index using the official API
+                pinecone.create_index(
+                    name=self.index_name,
+                    dimension=self.dimension,
+                    metric=self.metric
+                )
                 
                 # Wait for index to be ready
                 self._wait_for_index_ready()
@@ -117,10 +87,9 @@ class PineconeDB:
         
         while time.time() - start_time < timeout:
             try:
-                if hasattr(self.pc, 'describe_index'):
-                    index_info = self.pc.describe_index(self.index_name)
-                    if hasattr(index_info, 'status') and index_info.status.get('ready'):
-                        return
+                index_info = pinecone.describe_index(self.index_name)
+                if index_info.status['ready']:
+                    return
                 time.sleep(2)
             except Exception:
                 time.sleep(2)
@@ -160,7 +129,7 @@ class PineconeDB:
             # Upsert vectors
             response = self.index.upsert(vectors=vectors)
             
-            # Handle response format differences
+            # Handle response format
             upserted_count = getattr(response, 'upserted_count', len(vectors))
             logger.info(f"Successfully upserted {upserted_count} embeddings")
             return True

@@ -1,0 +1,7 @@
+streamlit>=1.28.0
+sentence-transformers>=2.2.2
+pinecone>=3.0.0
+numpy>=1.24.0
+torch>=2.0.0
+python-dotenv>=1.0.0
+pandas>=2.0.0
