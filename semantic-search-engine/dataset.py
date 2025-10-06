@@ -46,5 +46,5 @@ class DatasetManager:
             else:
                 ids.append(f"doc_{i:06d}")
 
-        return ids, data
+        return ids, data, titles, metadata_list
 dataset_manager = DatasetManager()
