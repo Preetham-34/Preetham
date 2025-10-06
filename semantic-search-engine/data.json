@@ -4,20 +4,34 @@
     "title": "Python Programming Fundamentals",
     "content": "Python is a versatile, high-level programming language known for its simplicity and readability. It supports multiple programming paradigms including object-oriented, functional, and procedural programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing. Its extensive standard library and active community make it an excellent choice for both beginners and experienced developers.",
     "category": "Programming",
-    "tags": ["python", "programming", "basics", "development"]
+    "tags": ["python", "programming", "basics", "syntax", "development"]
   },
   {
     "id": "doc_002",
     "title": "Machine Learning Introduction", 
-    "content": "Machine learning is a subset of artificial intelligence that enables computers to learn and improve from experience without being explicitly programmed. It involves algorithms that can identify patterns in data and make predictions or decisions. Common applications include recommendation systems, image recognition, natural language processing, and predictive analytics. Machine learning can be supervised, unsupervised, or reinforcement-based.",
+    "content": "Machine learning is a subset of artificial intelligence that enables computers to learn and improve from experience without being explicitly programmed. It involves algorithms that can identify patterns in data and make predictions or decisions. Common applications include recommendation systems, image recognition, natural language processing, and predictive analytics. Machine learning algorithms can be supervised, unsupervised, or reinforcement-based.",
     "category": "AI/ML",
-    "tags": ["machine-learning", "ai", "algorithms", "data-science"]
+    "tags": ["machine-learning", "ai", "algorithms", "data-science", "patterns"]
   },
   {
     "id": "doc_003",
     "title": "Vector Databases Explained",
-    "content": "Vector databases are specialized database systems designed to store, index, and search high-dimensional vector embeddings efficiently. They enable semantic search by finding similar vectors based on mathematical distance metrics like cosine similarity. Vector databases are essential for building RAG applications, recommendation systems, and similarity search engines. Popular examples include Pinecone, Weaviate, and Chroma.",
-    "category": "Database", 
-    "tags": ["vector-database", "embeddings", "semantic-search", "similarity"]
+    "content": "Vector databases are specialized database systems designed to store, index, and search high-dimensional vector embeddings efficiently. They enable semantic search by finding similar vectors based on mathematical distance metrics like cosine similarity. Vector databases are essential for building RAG applications, recommendation systems, and similarity search engines. Popular vector databases include Pinecone, Weaviate, Chroma, and Qdrant.",
+    "category": "Database",
+    "tags": ["vector-database", "embeddings", "semantic-search", "similarity", "rag"]
+  },
+  {
+    "id": "doc_004", 
+    "title": "Deep Learning Neural Networks",
+    "content": "Deep learning is a machine learning technique inspired by the human brain's neural networks. It uses multiple layers of artificial neurons to learn complex patterns in data. Deep learning has revolutionized computer vision, natural language processing, and speech recognition through architectures like CNNs, RNNs, and Transformers. These models can automatically extract features from raw data without manual feature engineering.",
+    "category": "AI/ML",
+    "tags": ["deep-learning", "neural-networks", "cnn", "rnn", "transformers"]
+  },
+  {
+    "id": "doc_005",
+    "title": "Natural Language Processing",
+    "content": "Natural Language Processing (NLP) combines computational linguistics with machine learning to help computers understand, interpret, and generate human language. Modern NLP uses transformer models like BERT and GPT for tasks such as sentiment analysis, machine translation, text summarization, and question answering. NLP has applications in chatbots, search engines, content analysis, and automated customer support.",
+    "category": "AI/ML", 
+    "tags": ["nlp", "transformers", "bert", "gpt", "language-models"]
   }
 ]

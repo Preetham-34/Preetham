@@ -1,4 +1,4 @@
-"""Main Streamlit application - Semantic Search Engine for GitHub/Streamlit Cloud deployment."""
+"""Main Streamlit application - Semantic Search Engine - Final corrected version."""
 
 import streamlit as st
 import logging
@@ -126,6 +126,9 @@ def initialize_search_engine():
                 st.info("Check your Streamlit Cloud secrets configuration")
             else:
                 st.info("Check your environment variables or .env file")
+        elif "not found" in error_str:
+            st.error("🌍 **Region Issue**: The specified region is not available")
+            st.info("This is automatically handled - the app will try alternative regions")
         elif "network" in error_str or "connection" in error_str:
             st.error("🌐 **Network Issue**: Cannot connect to Pinecone")
             st.info("Check your internet connection and try again")

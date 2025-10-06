@@ -1,8 +1,8 @@
-"""Safety utilities following DeepLearning.AI Quality and Safety best practices."""
+"""Safety and validation utilities for semantic search engine - Final version."""
 
 import re
 import logging
-from typing import List, Tuple
+from typing import List, Tuple, Optional
 from config import Config
 
 logger = logging.getLogger(__name__)

@@ -1,9 +1,10 @@
-"""Dataset management for semantic search - DeepLearning.AI data handling best practices."""
+"""Dataset loading and management utilities - Final version."""
 
 import json
 import logging
 import os
-from typing import List, Dict, Tuple
+import time
+from typing import List, Dict, Tuple, Optional
 
 logger = logging.getLogger(__name__)
 
