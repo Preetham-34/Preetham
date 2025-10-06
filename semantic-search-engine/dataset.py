@@ -47,3 +47,4 @@ class DatasetManager:
                 ids.append(f"doc_{i:06d}")
 
         return ids, data
+dataset_manager = DatasetManager()
