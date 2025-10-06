@@ -1,4 +1,4 @@
-"""Embedding generation using Sentence Transformers - Final version."""
+"""Embeddings generation with batch processing support for large datasets."""
 
 import logging
 import numpy as np
@@ -10,100 +10,65 @@ from config import Config
 logger = logging.getLogger(__name__)
 
 class EmbeddingGenerator:
-    """Generates embeddings using sentence transformers following best practices."""
-    
+    """Generates embeddings, supports batch processing for scalability."""
+
     def __init__(self, model_name: str = None):
-        """
-        Initialize embedding generator.
-        
-        Args:
-            model_name: Sentence transformer model name
-        """
         self.model_name = model_name or Config.EMBEDDING_MODEL
-        self.device = self._get_optimal_device()
+        self.device = self._get_device()
         self.model = None
         self.dimension = Config.EMBEDDING_DIMENSION
-        
-        logger.info(f"Initializing embedding generator with {self.model_name} on {self.device}")
+
+        logger.info(f"Loading model {self.model_name} on device {self.device}")
         self._load_model()
-    
-    def _get_optimal_device(self) -> str:
-        """Determine the best available device for inference."""
+
+    def _get_device(self) -> str:
         if torch.cuda.is_available():
             return "cuda"
         elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
-            return "mps"  # Apple Silicon
+            return "mps"
         else:
             return "cpu"
-    
-    def _load_model(self) -> None:
-        """Load the sentence transformer model with error handling."""
+
+    def _load_model(self):
         try:
-            self.model = SentenceTransformer(
-                self.model_name,
-                device=self.device
-            )
-            # Verify dimension matches configuration
-            actual_dim = self.model.get_sentence_embedding_dimension()
-            if actual_dim != self.dimension:
-                logger.warning(f"Model dimension {actual_dim} differs from config {self.dimension}")
-                self.dimension = actual_dim
-            
-            logger.info(f"Model loaded successfully: {self.dimension}D embeddings")
-            
+            self.model = SentenceTransformer(self.model_name, device=self.device)
+            model_dim = self.model.get_sentence_embedding_dimension()
+            if model_dim != self.dimension:
+                logger.warning(f"Model embedding dimension {model_dim} differs from configured {self.dimension}")
+                self.dimension = model_dim
+            logger.info(f"Model loaded successfully with embedding dimension {self.dimension}")
         except Exception as e:
-            logger.error(f"Failed to load model: {e}")
-            raise RuntimeError(f"Could not initialize embedding model: {e}")
-    
-    def encode(self, texts: Union[str, List[str]]) -> np.ndarray:
-        """
-        Generate embeddings for text inputs.
-        
-        Args:
-            texts: Single text or list of texts
-            
-        Returns:
-            Normalized embeddings as float32 numpy array
-        """
-        if not self.model:
-            raise RuntimeError("Model not initialized")
-        
-        # Ensure input is a list
+            logger.error(f"Failed to load embedding model: {e}")
+            raise
+
+    def encode(self, texts: Union[List[str], str], batch_size: int = 64) -> np.ndarray:
         if isinstance(texts, str):
             texts = [texts]
-        
-        if not texts:
-            raise ValueError("Cannot encode empty text list")
-        
+        embeddings = []
         try:
-            # Generate embeddings with normalization (important for cosine similarity)
-            embeddings = self.model.encode(
-                texts,
-                convert_to_numpy=True,
-                normalize_embeddings=True,  # Critical for vector search
-                show_progress_bar=len(texts) > 10
-            )
-            
-            # Ensure float32 for Pinecone compatibility
+            for start_idx in range(0, len(texts), batch_size):
+                batch_texts = texts[start_idx:start_idx + batch_size]
+                batch_embs = self.model.encode(
+                    batch_texts,
+                    convert_to_numpy=True,
+                    normalize_embeddings=True,
+                    show_progress_bar=False
+                )
+                embeddings.append(batch_embs)
+            embeddings = np.vstack(embeddings)
             embeddings = embeddings.astype(np.float32)
-            
-            logger.debug(f"Generated {len(embeddings)} embeddings")
+            logger.info(f"Generated embeddings for {len(texts)} texts in batches of {batch_size}")
             return embeddings
-            
         except Exception as e:
             logger.error(f"Embedding generation failed: {e}")
-            raise RuntimeError(f"Could not generate embeddings: {e}")
-    
+            raise
+
     def encode_single(self, text: str) -> np.ndarray:
-        """Generate embedding for a single text."""
-        embeddings = self.encode([text])
-        return embeddings[0]
-    
+        return self.encode([text])[0]
+
     def get_model_info(self) -> dict:
-        """Get model information for debugging."""
         return {
             "model_name": self.model_name,
-            "dimension": self.dimension,
+            "embedding_dimension": self.dimension,
             "device": self.device,
-            "max_seq_length": getattr(self.model, 'max_seq_length', 512) if self.model else None
         }
