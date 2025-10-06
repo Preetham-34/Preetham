@@ -32,15 +32,16 @@ class PineconeDB:
         self.index = self.pc.Index(self.index_name)
 
     def _ensure_index_exists(self):
-            indexes = self.pc.list_indexes().names()
-            if self.index_name not in indexes:
+        indexes = self.pc.list_indexes()
+        # Make sure this block is properly indented
+        if self.index_name not in indexes:
             self.pc.create_index(
-            name=self.index_name,
-            dimension=self.dimension,
-            metric=self.metric,
-            spec=ServerlessSpec(
-                cloud='gcp',     # Make sure this matches your Pinecone environment
-                region='us-west1'  # Change to supported region
+                name=self.index_name,
+                dimension=self.dimension,
+                metric=self.metric,
+                spec=ServerlessSpec(
+                    cloud='gcp',
+                    region='us-west1'
             )
         )
         self._wait_for_index_ready()
