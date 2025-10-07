@@ -20,7 +20,7 @@ import json
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Include 'Assistant' folder in path since files are there
-DATA_DIR = os.path.join(BASE_DIR, "Assistant")
+# DATA_DIR = os.path.join(BASE_DIR, "Assistant")
 
 courses_path = os.path.join(DATA_DIR, "courses.json")
 users_path = os.path.join(DATA_DIR, "users.json")
