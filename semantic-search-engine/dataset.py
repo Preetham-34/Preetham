@@ -5,7 +5,9 @@ import logging
 import os
 from typing import List, Dict, Tuple
 import os
-print(f"[DEBUG] Looking for data.json at: {os.path.abspath('data.json')}   Exists? {os.path.exists('data.json')}")
+print('[DEBUG] Working directory:', os.getcwd())
+print('[DEBUG] Files here:', os.listdir('.'))
+print('[DEBUG] File data.json exists?', os.path.exists('data.json'))
 
 logger = logging.getLogger(__name__)
 
