@@ -14,6 +14,13 @@ from embeddings import EmbeddingGenerator
 from recommendation import RecommendationEngine
 from faq_system import FAQSystem
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+courses_path = os.path.join(BASE_DIR, "courses.json")
+users_path = os.path.join(BASE_DIR, "users.json")
+faq_path = os.path.join(BASE_DIR, "faq.json")
+
 # Configure logging
 logging.basicConfig(
     level=getattr(logging, Config.LOG_LEVEL, "INFO"),
