@@ -17,14 +17,20 @@ from faq_system import FAQSystem
 import os
 import json
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # This is /mount/src/preetham/Assistant if code is inside that folder
 
-# Include 'Assistant' folder in path since files are there
-# DATA_DIR = os.path.join(BASE_DIR, "Assistant")
+# Since Streamlit runs in /mount/src/preetham, files are in 'Assistant' subfolder
+# So need to prepend 'Assistant' if code runs from parent directory or deal with different runtime cwd
 
-courses_path = os.path.join(BASE_DIR, "courses.json")
-users_path = os.path.join(BASE_DIR, "users.json")
-faq_path = os.path.join(BASE_DIR, "faq.json")
+# Proposed:
+DATA_DIR = os.path.join(BASE_DIR)  # If code runs from Assistant folder, keep as is
+# or
+#DATA_DIR = os.path.join(BASE_DIR, "Assistant")  # If code runs from parent folder, add Assistant
+
+# Since BASE_DIR is already Assistant, your files are directly under BASE_DIR:
+courses_path = os.path.join(DATA_DIR, "courses.json")
+users_path = os.path.join(DATA_DIR, "users.json")
+faq_path = os.path.join(DATA_DIR, "faq.json")
 
 def load_sample_data(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
