@@ -1,0 +1,237 @@
+[
+  {
+    "course_id": "CS101",
+    "course_title": "Introduction to Computer Science",
+    "course_description": "Fundamental concepts of computer science including programming, algorithms, data structures, and computational thinking. Perfect for beginners starting their journey in technology.",
+    "instructor": "Dr. Sarah Johnson",
+    "subject_area": "Computer Science",
+    "difficulty_level": "Beginner",
+    "duration_weeks": 12,
+    "enrollment_count": 1250,
+    "rating": 4.7,
+    "created_date": "2024-01-15",
+    "materials": [
+      {
+        "material_id": "CS101_L01",
+        "title": "What is Computer Science?",
+        "type": "video",
+        "content": "Computer science is the study of algorithmic processes, computational systems and the design of computer systems and their applications. It encompasses both theoretical foundations and practical applications, making it one of the most versatile fields in modern education. Students learn programming languages like Python and Java, understand how computers work at the hardware level, and explore applications from web development to artificial intelligence.",
+        "duration_minutes": 45,
+        "transcript": "Welcome to Introduction to Computer Science. Today we'll explore what computer science really means and why it's become so important in our daily lives. Computer science isn't just about programming - it's about problem-solving, logical thinking, and creating solutions that can impact millions of people.",
+        "tags": ["introduction", "overview", "fundamentals"]
+      },
+      {
+        "material_id": "CS101_L02",
+        "title": "Programming Fundamentals with Python",
+        "type": "video",
+        "content": "Python programming basics covering variables, data types, control structures, and functions. This comprehensive introduction teaches students how to write their first programs and understand programming logic. Topics include syntax, debugging, and best practices for writing clean, readable code.",
+        "duration_minutes": 60,
+        "transcript": "Let's dive into Python programming. Python is known for its simple, readable syntax that makes it perfect for beginners. We'll start with variables - think of them as containers that store data. Then we'll learn about different data types like strings, integers, and lists.",
+        "tags": ["python", "programming", "variables", "functions"]
+      },
+      {
+        "material_id": "CS101_DOC01",
+        "title": "Computer Science Career Guide",
+        "type": "document",
+        "content": "Comprehensive guide to computer science careers including software engineering, data science, cybersecurity, artificial intelligence, and web development. Covers salary expectations, required skills, educational paths, and industry trends for 2024-2025.",
+        "pages": 25,
+        "tags": ["careers", "jobs", "industry", "salary"]
+      }
+    ]
+  },
+  {
+    "course_id": "MATH201",
+    "course_title": "Calculus I",
+    "course_description": "Differential and integral calculus with applications. Covers limits, derivatives, integrals, and the fundamental theorem of calculus with real-world problem solving.",
+    "instructor": "Prof. Michael Chen",
+    "subject_area": "Mathematics", 
+    "difficulty_level": "Intermediate",
+    "duration_weeks": 16,
+    "enrollment_count": 890,
+    "rating": 4.5,
+    "created_date": "2023-08-20",
+    "materials": [
+      {
+        "material_id": "MATH201_L01",
+        "title": "Introduction to Limits",
+        "type": "video",
+        "content": "Understanding the concept of limits as the foundation of calculus. Limits describe the behavior of functions as inputs approach certain values. This fundamental concept leads to derivatives and integrals, making it essential for all future calculus work.",
+        "duration_minutes": 50,
+        "transcript": "Limits are the gateway to calculus. When we say the limit of f(x) as x approaches 3 equals 7, we mean that as x gets arbitrarily close to 3, f(x) gets arbitrarily close to 7. This concept might seem abstract now, but it's the foundation for everything we'll do in calculus.",
+        "tags": ["limits", "calculus", "functions", "mathematics"]
+      },
+      {
+        "material_id": "MATH201_A01",
+        "title": "Limits Practice Problems",
+        "type": "assignment",
+        "content": "Practice problems for calculating limits using algebraic manipulation, L'Hôpital's rule, and graphical analysis. Includes step-by-step solutions and common mistake warnings.",
+        "problems_count": 20,
+        "tags": ["practice", "homework", "limits", "problem-solving"]
+      }
+    ]
+  },
+  {
+    "course_id": "PHYS301",
+    "course_title": "Quantum Mechanics",
+    "course_description": "Introduction to quantum mechanics covering wave functions, Schrödinger equation, quantum operators, and applications to atomic and molecular systems.",
+    "instructor": "Dr. Elena Rodriguez",
+    "subject_area": "Physics",
+    "difficulty_level": "Advanced",
+    "duration_weeks": 14,
+    "enrollment_count": 320,
+    "rating": 4.8,
+    "created_date": "2024-02-01",
+    "materials": [
+      {
+        "material_id": "PHYS301_L01",
+        "title": "Wave-Particle Duality",
+        "type": "video",
+        "content": "Exploration of the fundamental principle that matter and energy exhibit both wave and particle characteristics. This duality is demonstrated through famous experiments like the double-slit experiment and photoelectric effect, showing how quantum mechanics challenges our classical understanding of physics.",
+        "duration_minutes": 75,
+        "transcript": "The wave-particle duality is perhaps the most mind-bending concept in physics. Light can behave as both a wave and a particle, depending on how we observe it. This isn't just a quirk of measurement - it tells us something profound about the nature of reality itself.",
+        "tags": ["quantum", "duality", "waves", "particles", "physics"]
+      }
+    ]
+  },
+  {
+    "course_id": "BUS400",
+    "course_title": "Digital Marketing Strategy",
+    "course_description": "Comprehensive course on modern digital marketing including SEO, social media marketing, content strategy, analytics, and conversion optimization.",
+    "instructor": "Prof. Amanda Williams",
+    "subject_area": "Business",
+    "difficulty_level": "Intermediate",
+    "duration_weeks": 10,
+    "enrollment_count": 2100,
+    "rating": 4.6,
+    "created_date": "2024-03-10",
+    "materials": [
+      {
+        "material_id": "BUS400_L01",
+        "title": "SEO Fundamentals",
+        "type": "video",
+        "content": "Search Engine Optimization fundamentals covering keyword research, on-page optimization, technical SEO, and link building strategies. Learn how to improve website visibility and drive organic traffic through proven SEO techniques.",
+        "duration_minutes": 55,
+        "transcript": "SEO is the art and science of getting your website to rank higher in search engine results. It's not just about keywords - modern SEO involves user experience, site speed, mobile optimization, and creating content that truly serves your audience's needs.",
+        "tags": ["seo", "marketing", "keywords", "optimization"]
+      },
+      {
+        "material_id": "BUS400_DOC01", 
+        "title": "Social Media Marketing Playbook",
+        "type": "document",
+        "content": "Complete guide to social media marketing across platforms including Facebook, Instagram, Twitter, LinkedIn, and TikTok. Covers content planning, community management, paid advertising, and measuring ROI.",
+        "pages": 40,
+        "tags": ["social-media", "marketing", "strategy", "engagement"]
+      }
+    ]
+  },
+  {
+    "course_id": "ART200",
+    "course_title": "Digital Art and Design",
+    "course_description": "Creative course exploring digital art techniques using industry-standard software like Photoshop, Illustrator, and Blender for 2D and 3D design.",
+    "instructor": "Maya Patel",
+    "subject_area": "Art",
+    "difficulty_level": "Beginner",
+    "duration_weeks": 8,
+    "enrollment_count": 750,
+    "rating": 4.9,
+    "created_date": "2024-01-30",
+    "materials": [
+      {
+        "material_id": "ART200_L01",
+        "title": "Introduction to Digital Art",
+        "type": "video",
+        "content": "Overview of digital art history, tools, and techniques. Covers the evolution from traditional to digital mediums, exploring how technology has transformed artistic expression and opened new creative possibilities.",
+        "duration_minutes": 40,
+        "transcript": "Digital art has revolutionized creative expression. From pixel art in early video games to photorealistic 3D renders in modern movies, digital tools have given artists unprecedented control and flexibility. Today we'll explore this exciting medium and its endless possibilities.",
+        "tags": ["digital-art", "design", "creativity", "software"]
+      },
+      {
+        "material_id": "ART200_L02",
+        "title": "Photoshop Basics for Artists",
+        "type": "video", 
+        "content": "Hands-on tutorial covering Photoshop's essential tools for digital artists including brushes, layers, filters, and color correction. Perfect for beginners wanting to create digital paintings and photo manipulations.",
+        "duration_minutes": 65,
+        "transcript": "Photoshop is the industry standard for digital image editing and creation. We'll start with the basics - understanding layers is crucial because they let you work on different parts of your image separately. Think of layers like transparent sheets stacked on top of each other.",
+        "tags": ["photoshop", "tutorial", "layers", "brushes"]
+      }
+    ]
+  },
+  {
+    "course_id": "DATA301",
+    "course_title": "Data Science with Python",
+    "course_description": "Comprehensive data science course covering data analysis, visualization, machine learning, and statistical modeling using Python, pandas, and scikit-learn.",
+    "instructor": "Dr. James Park",
+    "subject_area": "Computer Science",
+    "difficulty_level": "Advanced",
+    "duration_weeks": 12,
+    "enrollment_count": 1800,
+    "rating": 4.8,
+    "created_date": "2024-02-15",
+    "materials": [
+      {
+        "material_id": "DATA301_L01",
+        "title": "Data Analysis with Pandas",
+        "type": "video",
+        "content": "Introduction to data manipulation and analysis using pandas library. Covers DataFrames, data cleaning, filtering, grouping, and merging datasets for real-world data science projects.",
+        "duration_minutes": 70,
+        "transcript": "Pandas is the backbone of data science in Python. It provides powerful data structures like DataFrames that make working with structured data intuitive and efficient. Today we'll learn how to load, clean, and analyze real datasets.",
+        "tags": ["pandas", "data-analysis", "python", "dataframes"]
+      },
+      {
+        "material_id": "DATA301_L02",
+        "title": "Machine Learning Fundamentals", 
+        "type": "video",
+        "content": "Introduction to machine learning concepts including supervised and unsupervised learning, model training, validation, and evaluation metrics. Covers linear regression, classification, and clustering algorithms.",
+        "duration_minutes": 80,
+        "transcript": "Machine learning is about finding patterns in data that help us make predictions or decisions. We'll explore different types of algorithms - supervised learning where we learn from examples, and unsupervised learning where we find hidden patterns.",
+        "tags": ["machine-learning", "algorithms", "supervised", "unsupervised"]
+      }
+    ]
+  },
+  {
+    "course_id": "HIST150", 
+    "course_title": "World History: Ancient Civilizations",
+    "course_description": "Exploration of ancient civilizations including Egypt, Mesopotamia, Greece, Rome, and early Asian empires. Covers political, social, and cultural developments.",
+    "instructor": "Prof. Robert Thompson",
+    "subject_area": "History",
+    "difficulty_level": "Beginner", 
+    "duration_weeks": 14,
+    "enrollment_count": 950,
+    "rating": 4.4,
+    "created_date": "2023-09-05",
+    "materials": [
+      {
+        "material_id": "HIST150_L01",
+        "title": "Rise of Ancient Egypt",
+        "type": "video",
+        "content": "Comprehensive overview of ancient Egyptian civilization including pharaohs, pyramids, religion, and daily life. Explores how the Nile River shaped Egyptian society and culture for thousands of years.",
+        "duration_minutes": 55,
+        "transcript": "Ancient Egypt was one of humanity's greatest civilizations, lasting over 3000 years. The Nile River was the source of life, providing fertile soil through annual floods. This predictability allowed Egyptians to develop complex societies with remarkable achievements in architecture, medicine, and mathematics.",
+        "tags": ["egypt", "civilization", "pharaohs", "nile", "ancient"]
+      }
+    ]
+  },
+  {
+    "course_id": "PSYC250",
+    "course_title": "Cognitive Psychology",
+    "course_description": "Study of mental processes including perception, attention, memory, language, problem-solving, and decision-making from experimental and theoretical perspectives.",
+    "instructor": "Dr. Lisa Anderson",
+    "subject_area": "Psychology",
+    "difficulty_level": "Intermediate",
+    "duration_weeks": 12,
+    "enrollment_count": 680,
+    "rating": 4.7,
+    "created_date": "2024-01-20",
+    "materials": [
+      {
+        "material_id": "PSYC250_L01",
+        "title": "How Memory Works",
+        "type": "video",
+        "content": "Detailed exploration of human memory systems including sensory memory, short-term memory, and long-term memory. Covers encoding, storage, and retrieval processes with practical applications for learning and studying.",
+        "duration_minutes": 60,
+        "transcript": "Memory isn't like a video recorder - it's reconstructive. Every time we remember something, we're rebuilding that memory, which means our memories can change over time. Understanding how memory works can dramatically improve how we learn and retain information.",
+        "tags": ["memory", "cognitive", "psychology", "learning", "brain"]
+      }
+    ]
+  }
+]

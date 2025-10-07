@@ -1,0 +1,272 @@
+[
+  {
+    "user_id": "user_001",
+    "username": "alex_chen",
+    "email": "alex.chen@university.edu",
+    "full_name": "Alex Chen",
+    "role": "student",
+    "registration_date": "2023-09-15",
+    "profile": {
+      "major": "Computer Science",
+      "year": "sophomore",
+      "interests": ["programming", "artificial intelligence", "web development", "data science"],
+      "learning_style": "visual",
+      "goals": ["become a software engineer", "learn machine learning", "build web applications"],
+      "preferred_difficulty": "intermediate",
+      "study_hours_per_week": 25
+    },
+    "enrolled_courses": ["CS101", "MATH201", "DATA301"],
+    "completed_courses": [],
+    "current_progress": {
+      "CS101": 0.85,
+      "MATH201": 0.60,
+      "DATA301": 0.30
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T14:30:00Z",
+        "action": "view",
+        "material_id": "CS101_L01",
+        "duration_minutes": 45,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-10-01T15:20:00Z", 
+        "action": "bookmark",
+        "material_id": "CS101_DOC01"
+      },
+      {
+        "timestamp": "2024-10-02T10:15:00Z",
+        "action": "search",
+        "query": "python programming basics",
+        "results_clicked": ["CS101_L02"]
+      }
+    ],
+    "preferences": {
+      "content_types": ["video", "document"],
+      "notification_frequency": "daily",
+      "language": "english"
+    }
+  },
+  {
+    "user_id": "user_002", 
+    "username": "maria_gonzalez",
+    "email": "maria.gonzalez@university.edu",
+    "full_name": "Maria Gonzalez",
+    "role": "student",
+    "registration_date": "2023-08-20",
+    "profile": {
+      "major": "Business Administration",
+      "year": "junior", 
+      "interests": ["digital marketing", "entrepreneurship", "social media", "analytics"],
+      "learning_style": "kinesthetic",
+      "goals": ["start own business", "master digital marketing", "understand data analytics"],
+      "preferred_difficulty": "intermediate",
+      "study_hours_per_week": 20
+    },
+    "enrolled_courses": ["BUS400", "PSYC250"],
+    "completed_courses": ["BUS100", "MATH101"],
+    "current_progress": {
+      "BUS400": 0.75,
+      "PSYC250": 0.40
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-09-28T09:45:00Z",
+        "action": "complete",
+        "material_id": "BUS400_L01",
+        "quiz_score": 0.92
+      },
+      {
+        "timestamp": "2024-09-29T16:00:00Z",
+        "action": "view",
+        "material_id": "BUS400_DOC01",
+        "duration_minutes": 30,
+        "completion_rate": 0.6
+      },
+      {
+        "timestamp": "2024-09-30T11:30:00Z",
+        "action": "search",
+        "query": "social media marketing strategies",
+        "results_clicked": ["BUS400_DOC01"]
+      }
+    ],
+    "preferences": {
+      "content_types": ["video", "document", "quiz"],
+      "notification_frequency": "weekly",
+      "language": "english"
+    }
+  },
+  {
+    "user_id": "user_003",
+    "username": "david_kim",
+    "email": "david.kim@university.edu", 
+    "full_name": "David Kim",
+    "role": "graduate_student",
+    "registration_date": "2022-08-25",
+    "profile": {
+      "major": "Physics",
+      "year": "graduate_first",
+      "interests": ["quantum mechanics", "theoretical physics", "research", "mathematics"],
+      "learning_style": "analytical",
+      "goals": ["complete PhD", "publish research", "understand quantum field theory"],
+      "preferred_difficulty": "advanced", 
+      "study_hours_per_week": 40
+    },
+    "enrolled_courses": ["PHYS301"],
+    "completed_courses": ["PHYS201", "PHYS202", "MATH301", "MATH302"],
+    "current_progress": {
+      "PHYS301": 0.95
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T08:00:00Z",
+        "action": "view",
+        "material_id": "PHYS301_L01",
+        "duration_minutes": 75,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-10-01T10:30:00Z",
+        "action": "search",
+        "query": "schrodinger equation applications",
+        "results_clicked": []
+      },
+      {
+        "timestamp": "2024-10-02T14:15:00Z",
+        "action": "comment",
+        "material_id": "PHYS301_L01",
+        "comment": "Excellent explanation of wave-particle duality"
+      }
+    ],
+    "preferences": {
+      "content_types": ["video", "document", "research_paper"],
+      "notification_frequency": "daily",
+      "language": "english"
+    }
+  },
+  {
+    "user_id": "user_004",
+    "username": "sarah_williams",
+    "email": "sarah.williams@university.edu",
+    "full_name": "Sarah Williams",
+    "role": "student",
+    "registration_date": "2024-01-10",
+    "profile": {
+      "major": "Art and Design",
+      "year": "freshman",
+      "interests": ["digital art", "graphic design", "photography", "creativity"],
+      "learning_style": "visual",
+      "goals": ["become professional designer", "master digital tools", "build portfolio"],
+      "preferred_difficulty": "beginner",
+      "study_hours_per_week": 15
+    },
+    "enrolled_courses": ["ART200"],
+    "completed_courses": [],
+    "current_progress": {
+      "ART200": 0.50
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-09-25T13:20:00Z",
+        "action": "view",
+        "material_id": "ART200_L01",
+        "duration_minutes": 40,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-09-26T15:45:00Z",
+        "action": "view", 
+        "material_id": "ART200_L02",
+        "duration_minutes": 35,
+        "completion_rate": 0.54
+      },
+      {
+        "timestamp": "2024-09-27T12:10:00Z",
+        "action": "search",
+        "query": "photoshop tutorials for beginners",
+        "results_clicked": ["ART200_L02"]
+      }
+    ],
+    "preferences": {
+      "content_types": ["video", "tutorial"],
+      "notification_frequency": "weekly",
+      "language": "english"
+    }
+  },
+  {
+    "user_id": "user_005",
+    "username": "prof_johnson",
+    "email": "sarah.johnson@university.edu",
+    "full_name": "Dr. Sarah Johnson", 
+    "role": "instructor",
+    "registration_date": "2020-01-15",
+    "profile": {
+      "department": "Computer Science",
+      "specialization": ["programming", "software engineering", "algorithms"],
+      "teaching_experience_years": 12,
+      "research_interests": ["computer science education", "programming pedagogy"],
+      "courses_taught": ["CS101", "CS201", "CS301"]
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T09:00:00Z",
+        "action": "update_content",
+        "material_id": "CS101_L01",
+        "changes": "Added new examples"
+      },
+      {
+        "timestamp": "2024-10-02T11:30:00Z",
+        "action": "review_submissions",
+        "material_id": "CS101_A01",
+        "students_reviewed": 45
+      }
+    ],
+    "preferences": {
+      "notification_frequency": "daily",
+      "language": "english"
+    }
+  },
+  {
+    "user_id": "user_006",
+    "username": "emma_taylor",
+    "email": "emma.taylor@university.edu",
+    "full_name": "Emma Taylor",
+    "role": "student",
+    "registration_date": "2023-01-12",
+    "profile": {
+      "major": "History",
+      "year": "junior",
+      "interests": ["ancient civilizations", "archaeology", "cultural studies", "writing"],
+      "learning_style": "reading",
+      "goals": ["become historian", "write historical research", "understand past cultures"],
+      "preferred_difficulty": "intermediate",
+      "study_hours_per_week": 22
+    },
+    "enrolled_courses": ["HIST150"],
+    "completed_courses": ["HIST101", "HIST102"],
+    "current_progress": {
+      "HIST150": 0.70
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-09-20T16:30:00Z",
+        "action": "view",
+        "material_id": "HIST150_L01",
+        "duration_minutes": 55,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-09-21T14:15:00Z",
+        "action": "search", 
+        "query": "ancient egyptian architecture pyramids",
+        "results_clicked": ["HIST150_L01"]
+      }
+    ],
+    "preferences": {
+      "content_types": ["video", "document", "audio"],
+      "notification_frequency": "weekly", 
+      "language": "english"
+    }
+  }
+]
