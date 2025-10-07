@@ -9,7 +9,7 @@ print('[DEBUG] Working directory:', os.getcwd())
 print('[DEBUG] Files here:', os.listdir('.'))
 print('[DEBUG] File data.json exists?', os.path.exists('data.json'))
 
-def __init__(self, data_file_path: str = "semantic-search-engine/data.json"):
+    def __init__(self, data_file_path: str = "semantic-search-engine/data.json"):
 
 
 logger = logging.getLogger(__name__)
