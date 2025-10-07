@@ -18,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 class DatasetManager:
     """Manages document datasets with validation and error handling."""
+    def __init__(self, data_file_path: str = "semantic-search-engine/data.json"):
 
     def __init__(self, data_file_path: str = "data.json"):
         self.data_file_path = data_file_path
