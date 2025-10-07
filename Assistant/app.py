@@ -17,6 +17,8 @@ from faq_system import FAQSystem
 import os
 import json
 
+print("[DEBUG] Current working directory:", os.getcwd())
+print("[DEBUG] Files in working directory:", os.listdir('.'))
 # Get the absolute directory of current script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
