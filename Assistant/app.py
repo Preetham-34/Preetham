@@ -15,11 +15,21 @@ from recommendation import RecommendationEngine
 from faq_system import FAQSystem
 
 import os
+import json
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 courses_path = os.path.join(BASE_DIR, "courses.json")
 users_path = os.path.join(BASE_DIR, "users.json")
 faq_path = os.path.join(BASE_DIR, "faq.json")
+
+def load_sample_data(path):
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+courses_data = load_sample_data(courses_path)
+users_data = load_sample_data(users_path)
+faq_data = load_sample_data(faq_path)
+
 
 # Configure logging
 logging.basicConfig(
