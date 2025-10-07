@@ -4,6 +4,8 @@ import json
 import logging
 import os
 from typing import List, Dict, Tuple
+import os
+print(f"[DEBUG] Looking for data.json at: {os.path.abspath('data.json')}   Exists? {os.path.exists('data.json')}")
 
 logger = logging.getLogger(__name__)
 
