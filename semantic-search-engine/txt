@@ -1,7 +1,0 @@
-streamlit
-sentence-transformers
-pinecone-client
-numpy
-torch
-python-dotenv
-pandas
