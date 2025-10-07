@@ -1,8 +1,9 @@
-"""Main Streamlit application - Complete final version with all fixes."""
+"""Main Streamlit application - Production Ready with Enhanced Debugging."""
 
 import streamlit as st
 import logging
 import time
+import traceback
 from typing import List, Dict
 import numpy as np
 
@@ -27,7 +28,7 @@ def show_deployment_info():
         st.sidebar.json(info)
 
 def initialize_search_engine():
-    """Initialize the semantic search engine components with complete error handling."""
+    """Initialize the semantic search engine components with comprehensive error handling and debugging."""
     try:
         if "search_initialized" not in st.session_state:
             
@@ -58,76 +59,134 @@ def initialize_search_engine():
             
             with st.spinner("🚀 Initializing AI-powered semantic search engine..."):
                 
-                # Load dataset - now properly returns 4 values
+                # Load dataset with detailed logging
                 progress_bar = st.progress(0)
                 st.write("📚 Loading document dataset...")
                 
                 try:
                     ids, documents, titles, metadata = dataset_manager.load_dataset()
+                    print(f"[APP] Loaded {len(ids)} documents")
+                    print(f"[APP] First 3 titles: {titles[:3]}")
+                    
                     logger.info(f"Successfully loaded {len(documents)} documents")
+                    st.write(f"✅ Loaded {len(documents)} documents successfully")
+                    
                 except Exception as e:
                     logger.error(f"Dataset loading failed: {e}")
                     st.error(f"Failed to load dataset: {str(e)}")
+                    print(f"[APP] ERROR: Dataset loading failed: {e}")
+                    print(traceback.format_exc())
                     st.stop()
                 
                 progress_bar.progress(20)
                 
-                # Initialize embedding generator
+                # Initialize embedding generator with debugging
                 st.write("🧠 Loading AI embedding model...")
                 try:
                     embedder = EmbeddingGenerator()
+                    st.write("✅ Embedding model loaded successfully")
                 except Exception as e:
                     logger.error(f"Embedder initialization failed: {e}")
                     st.error(f"Failed to load embedding model: {str(e)}")
+                    print(f"[APP] ERROR: Embedder initialization failed: {e}")
+                    print(traceback.format_exc())
                     st.stop()
                 
                 progress_bar.progress(40)
                 
-                # Initialize vector database
+                # Initialize vector database with debugging
                 st.write("🗄️ Connecting to vector database...")
                 try:
                     vector_db = PineconeDB()
+                    st.write("✅ Connected to Pinecone successfully")
                 except Exception as e:
                     logger.error(f"Vector DB initialization failed: {e}")
                     st.error(f"Failed to connect to Pinecone: {str(e)}")
+                    print(f"[APP] ERROR: Vector DB initialization failed: {e}")
+                    print(traceback.format_exc())
                     st.stop()
                 
                 progress_bar.progress(60)
                 
-                # Generate embeddings with batch processing
+                # Generate embeddings with comprehensive debugging
                 st.write("⚡ Generating semantic embeddings...")
                 try:
                     doc_embeddings = embedder.encode(documents, batch_size=32)
+                    print(f"[APP] Generated {len(doc_embeddings)} embeddings, shape: {doc_embeddings.shape}")
+                    
+                    # Validate embedding dimensions
+                    assert len(ids) == len(doc_embeddings), f"[APP] ERROR: IDs ({len(ids)}) and embeddings ({len(doc_embeddings)}) count mismatch!"
+                    
+                    st.write(f"✅ Generated {len(doc_embeddings)} embeddings")
+                    
                 except Exception as e:
                     logger.error(f"Embedding generation failed: {e}")
                     st.error(f"Failed to generate embeddings: {str(e)}")
+                    print(f"[APP] ERROR: Embedding generation failed: {e}")
+                    print(traceback.format_exc())
                     st.stop()
                 
                 progress_bar.progress(80)
                 
-                # Store in vector database
+                # Store in vector database with batch processing and detailed logging
                 st.write("💾 Storing embeddings in cloud database...")
                 try:
+                    # Prepare metadata with content
                     metadata_with_content = []
                     for i, meta in enumerate(metadata):
                         meta_copy = meta.copy()
                         meta_copy['content'] = documents[i]
                         metadata_with_content.append(meta_copy)
                     
-                    success = vector_db.add_embeddings(
-                        ids=ids,
-                        embeddings=doc_embeddings,
-                        metadata_list=metadata_with_content
-                    )
+                    print(f"[APP] Prepared {len(metadata_with_content)} metadata entries")
                     
-                    if not success:
-                        st.error("❌ Failed to store embeddings in vector database")
-                        st.error("Please check your Pinecone configuration and try again.")
-                        st.stop()
+                    # Batch upload with detailed progress tracking
+                    batch_size = 100
+                    n_uploaded = 0
+                    
+                    for i in range(0, len(ids), batch_size):
+                        batch_ids = ids[i:i+batch_size]
+                        batch_embs = doc_embeddings[i:i+batch_size]
+                        batch_meta = metadata_with_content[i:i+batch_size]
+                        
+                        batch_num = (i // batch_size) + 1
+                        total_batches = (len(ids) - 1) // batch_size + 1
+                        
+                        print(f"[APP] Uploading batch {batch_num}/{total_batches}: {len(batch_ids)} vectors")
+                        st.write(f"📤 Uploading batch {batch_num}/{total_batches}...")
+                        
+                        try:
+                            success = vector_db.add_embeddings(
+                                ids=batch_ids,
+                                embeddings=batch_embs,
+                                metadata_list=batch_meta
+                            )
+                            
+                            if success:
+                                n_uploaded += len(batch_ids)
+                                print(f"[APP] Successfully uploaded batch {batch_num}: {len(batch_ids)} vectors")
+                            else:
+                                print(f"[APP] ERROR: Upload failed for batch {batch_num}")
+                                st.error(f"❌ Failed to upload batch {batch_num}")
+                                st.stop()
+                                
+                        except Exception as batch_error:
+                            print(f"[APP] EXCEPTION: Exception during batch {batch_num}:")
+                            print(traceback.format_exc())
+                            st.error(f"❌ Exception during batch {batch_num}: {str(batch_error)}")
+                            st.stop()
+                    
+                    print(f"[APP] Upload complete! Total vectors uploaded: {n_uploaded}")
+                    st.write(f"✅ Successfully uploaded {n_uploaded} embeddings to Pinecone")
+                    
+                    if n_uploaded != len(ids):
+                        st.warning(f"⚠️ Upload count mismatch: expected {len(ids)}, got {n_uploaded}")
                         
                 except Exception as e:
                     logger.error(f"Vector storage failed: {e}")
                     st.error(f"Failed to store vectors: {str(e)}")
+                    print(f"[APP] ERROR: Vector storage failed: {e}")
+                    print(traceback.format_exc())
                     st.stop()
                 
                 progress_bar.progress(100)
@@ -142,6 +201,7 @@ def initialize_search_engine():
                 st.session_state.search_initialized = True
                 
                 st.success("✅ Search engine initialized successfully!")
+                print(f"[APP] Initialization complete! Ready for search queries.")
                 time.sleep(1)
                 st.rerun()
     
@@ -149,6 +209,8 @@ def initialize_search_engine():
         logger.error(f"Initialization failed: {e}")
         st.error(f"❌ **Initialization Failed**")
         st.error(f"Error: {str(e)}")
+        print(f"[APP] FATAL ERROR: Initialization failed: {str(e)}")
+        print(traceback.format_exc())
         
         # Show helpful error messages
         error_str = str(e).lower()
@@ -167,9 +229,9 @@ def initialize_search_engine():
         elif "model" in error_str:
             st.error("🤖 **Model Issue**: Cannot load the AI model")
             st.info("This usually resolves on retry. Refresh the page.")
-        elif "title" in error_str:
+        elif "title" in error_str or "dataset" in error_str:
             st.error("📁 **Dataset Issue**: Problem with dataset structure")
-            st.info("The dataset format might be incorrect. Using fallback sample data.")
+            st.info("The dataset format might be incorrect. Check data.json file.")
         
         # Show deployment info for debugging
         with st.expander("🔧 Debug Information"):
@@ -204,12 +266,12 @@ def render_sidebar():
         info = st.session_state.dataset_info
         st.sidebar.markdown("### 📊 Dataset Info:")
         st.sidebar.metric("Documents", info['total_docs'])
-        categories = info['categories'][:5]  # Show first 5 categories
-        if len(info['categories']) > 5:
+        categories = info['categories'][:8]  # Show first 8 categories
+        if len(info['categories']) > 8:
             categories.append("...")
         st.sidebar.write(f"**Categories**: {', '.join(categories)}")
     
-    # Example queries
+    # Example queries - Enhanced for new dataset
     st.sidebar.markdown("### 🔍 Try These Queries:")
     examples = [
         "What is machine learning?",
@@ -219,7 +281,9 @@ def render_sidebar():
         "Deep learning applications",
         "Best coffee makers",
         "Smart home devices",
-        "Investment strategies"
+        "Investment strategies",
+        "Sustainable fashion brands",
+        "Cybersecurity threats"
     ]
     
     for example in examples:
@@ -255,10 +319,11 @@ def perform_semantic_search(query: str) -> List[Dict]:
     except Exception as e:
         logger.error(f"Search error: {e}")
         st.error(f"Search failed: {str(e)}")
+        print(f"[APP] ERROR: Search failed: {e}")
         return []
 
 def display_search_results(results: List[Dict], query: str):
-    """Display search results with enhanced formatting."""
+    """Display search results with enhanced formatting for comprehensive dataset."""
     if not results:
         st.info("🤔 No similar documents found. Try rephrasing your query or using different keywords.")
         st.markdown("**💡 Tips:**")
@@ -283,7 +348,7 @@ def display_search_results(results: List[Dict], query: str):
                 # Result header
                 st.markdown(f"### {i}. {title}")
                 
-                # Category badge
+                # Enhanced category icons for comprehensive dataset
                 category_colors = {
                     'Programming': '💻',
                     'AI/ML': '🤖', 
@@ -323,13 +388,13 @@ def display_search_results(results: List[Dict], query: str):
                 st.markdown(f"{icon} **{category}**")
                 
                 # Content preview
-                display_content = content[:250] + "..." if len(content) > 250 else content
+                display_content = content[:300] + "..." if len(content) > 300 else content
                 st.markdown(f"*{display_content}*")
                 
                 # Tags
                 tags = metadata.get('tags', [])
                 if tags:
-                    tag_badges = " ".join([f"`{tag}`" for tag in tags[:4]])
+                    tag_badges = " ".join([f"`{tag}`" for tag in tags[:5]])
                     st.markdown(f"**Tags:** {tag_badges}")
             
             with col2:
@@ -426,7 +491,7 @@ def main():
     query = st.text_input(
         "Ask anything about the documents...",
         value=default_query,
-        placeholder="e.g., 'How do neural networks learn from data?'",
+        placeholder="e.g., 'smart home devices' or 'investment strategies'",
         help="Enter a natural language question or topic. The AI will find relevant documents based on meaning, not just keywords.",
         label_visibility="collapsed"
     )
@@ -474,7 +539,7 @@ def main():
     <div style="text-align: center; color: #64748b; padding: 1rem;">
         <p>🚀 <strong>Deployed on Streamlit Cloud</strong></p>
         <p>Powered by Sentence Transformers • Pinecone Vector Database • GitHub</p>
-        <p style="font-size: 0.9rem;">Following DeepLearning.AI best practices for production AI applications</p>
+        <p style="font-size: 0.9rem;">Production-ready AI semantic search with comprehensive debugging</p>
     </div>
     """, unsafe_allow_html=True)
 

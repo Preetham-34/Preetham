@@ -1,4 +1,4 @@
-"""Pinecone vector database management - Complete final version."""
+"""Pinecone vector database management - Production Ready with Enhanced Debugging."""
 
 import logging
 import time
@@ -34,6 +34,7 @@ class PineconeDB:
         self.index = None
         
         logger.info(f"Initializing Pinecone DB: {self.index_name}")
+        print(f"[PINECONE] Initializing connection to index: {self.index_name}")
         self._initialize_client()
     
     def _initialize_client(self) -> None:
@@ -41,6 +42,7 @@ class PineconeDB:
         try:
             # Initialize Pinecone using the new API
             self.pc = Pinecone(api_key=self.api_key)
+            print(f"[PINECONE] Connected to Pinecone API")
             
             # Ensure index exists
             self._ensure_index_exists()
@@ -49,9 +51,11 @@ class PineconeDB:
             self.index = self.pc.Index(self.index_name)
             
             logger.info("Pinecone initialized successfully")
+            print(f"[PINECONE] Successfully connected to index: {self.index_name}")
             
         except Exception as e:
             logger.error(f"Pinecone initialization failed: {e}")
+            print(f"[PINECONE] ERROR: Initialization failed: {e}")
             raise RuntimeError(f"Could not initialize Pinecone: {e}")
     
     def _ensure_index_exists(self) -> None:
@@ -63,6 +67,7 @@ class PineconeDB:
             
             if self.index_name not in index_names:
                 logger.info(f"Creating index: {self.index_name}")
+                print(f"[PINECONE] Creating new index: {self.index_name}")
                 
                 # Try serverless first (for free tier)
                 try:
@@ -75,9 +80,10 @@ class PineconeDB:
                             region='us-east-1'  # Most widely supported free tier region
                         )
                     )
+                    print(f"[PINECONE] Created serverless index successfully")
                 except Exception as serverless_error:
                     logger.warning(f"Serverless creation failed: {serverless_error}")
-                    logger.info("Trying pod-based index creation...")
+                    print(f"[PINECONE] Serverless creation failed, trying pod-based...")
                     
                     # Fallback to pod-based for older accounts
                     self.pc.create_index(
@@ -89,37 +95,44 @@ class PineconeDB:
                             pod_type="p1.x1"
                         )
                     )
+                    print(f"[PINECONE] Created pod-based index successfully")
                 
                 # Wait for index to be ready
                 self._wait_for_index_ready()
+            else:
+                print(f"[PINECONE] Index {self.index_name} already exists")
             
             logger.info(f"Index {self.index_name} is ready")
             
         except Exception as e:
             logger.error(f"Error ensuring index exists: {e}")
+            print(f"[PINECONE] ERROR: Failed to ensure index exists: {e}")
             raise
     
     def _wait_for_index_ready(self, timeout: int = 60) -> None:
         """Wait for index to become ready."""
         start_time = time.time()
+        print(f"[PINECONE] Waiting for index to be ready (timeout: {timeout}s)...")
         
         while time.time() - start_time < timeout:
             try:
                 index_info = self.pc.describe_index(self.index_name)
                 if hasattr(index_info, 'status') and index_info.status.get('ready'):
+                    print(f"[PINECONE] Index is ready!")
                     return
                 time.sleep(2)
             except Exception:
                 time.sleep(2)
         
         logger.warning(f"Index {self.index_name} readiness timeout - proceeding anyway")
+        print(f"[PINECONE] WARNING: Index readiness timeout, proceeding anyway")
     
     def add_embeddings(self, 
                       ids: List[str], 
                       embeddings: np.ndarray, 
                       metadata_list: List[Dict] = None) -> bool:
         """
-        Add embeddings to Pinecone index.
+        Add embeddings to Pinecone index with robust error handling.
         
         Args:
             ids: Document IDs
@@ -131,7 +144,9 @@ class PineconeDB:
         """
         try:
             if len(ids) != len(embeddings):
-                raise ValueError("IDs and embeddings length mismatch")
+                raise ValueError(f"IDs ({len(ids)}) and embeddings ({len(embeddings)}) length mismatch")
+            
+            print(f"[PINECONE] Preparing {len(ids)} vectors for upload...")
             
             # Prepare vectors for upsert
             vectors = []
@@ -150,19 +165,35 @@ class PineconeDB:
             
             for i in range(0, len(vectors), batch_size):
                 batch = vectors[i:i + batch_size]
-                response = self.index.upsert(vectors=batch)
+                batch_num = (i // batch_size) + 1
+                total_batches = (len(vectors) - 1) // batch_size + 1
                 
-                # Handle response format
-                if hasattr(response, 'upserted_count'):
-                    total_upserted += response.upserted_count
-                else:
-                    total_upserted += len(batch)
+                print(f"[PINECONE] Uploading batch {batch_num}/{total_batches}: {len(batch)} vectors")
+                
+                try:
+                    response = self.index.upsert(vectors=batch)
+                    
+                    # Handle response format
+                    if hasattr(response, 'upserted_count'):
+                        batch_uploaded = response.upserted_count
+                    else:
+                        batch_uploaded = len(batch)
+                    
+                    total_upserted += batch_uploaded
+                    print(f"[PINECONE] Batch {batch_num} uploaded successfully: {batch_uploaded} vectors")
+                    
+                except Exception as batch_error:
+                    logger.error(f"Batch {batch_num} upload failed: {batch_error}")
+                    print(f"[PINECONE] ERROR: Batch {batch_num} upload failed: {batch_error}")
+                    return False
             
             logger.info(f"Successfully upserted {total_upserted} embeddings")
+            print(f"[PINECONE] Upload complete! Total vectors uploaded: {total_upserted}")
             return True
             
         except Exception as e:
             logger.error(f"Error adding embeddings: {e}")
+            print(f"[PINECONE] ERROR: Failed to add embeddings: {e}")
             return False
     
     def search(self, 
@@ -215,6 +246,7 @@ class PineconeDB:
             
         except Exception as e:
             logger.error(f"Search error: {e}")
+            print(f"[PINECONE] ERROR: Search failed: {e}")
             return []
     
     def get_stats(self) -> Dict[str, Any]:

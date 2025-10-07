@@ -1,4 +1,4 @@
-"""Embedding generation with batch processing - Complete final version."""
+"""Embedding generation with batch processing - Production Ready with Enhanced Debugging."""
 
 import logging
 import numpy as np
@@ -25,6 +25,7 @@ class EmbeddingGenerator:
         self.dimension = Config.EMBEDDING_DIMENSION
         
         logger.info(f"Initializing embedding generator with {self.model_name} on {self.device}")
+        print(f"[EMBEDDING] Initializing model {self.model_name} on device {self.device}")
         self._load_model()
     
     def _get_optimal_device(self) -> str:
@@ -47,12 +48,15 @@ class EmbeddingGenerator:
             actual_dim = self.model.get_sentence_embedding_dimension()
             if actual_dim != self.dimension:
                 logger.warning(f"Model dimension {actual_dim} differs from config {self.dimension}")
+                print(f"[EMBEDDING] Warning: Model dimension {actual_dim} != config {self.dimension}")
                 self.dimension = actual_dim
             
             logger.info(f"Model loaded successfully: {self.dimension}D embeddings")
+            print(f"[EMBEDDING] Model loaded successfully: {self.dimension}D embeddings")
             
         except Exception as e:
             logger.error(f"Failed to load model: {e}")
+            print(f"[EMBEDDING] ERROR: Failed to load model: {e}")
             raise RuntimeError(f"Could not initialize embedding model: {e}")
     
     def encode(self, texts: Union[str, List[str]], batch_size: int = 32) -> np.ndarray:
@@ -76,19 +80,25 @@ class EmbeddingGenerator:
         if not texts:
             raise ValueError("Cannot encode empty text list")
         
+        print(f"[EMBEDDING] Starting embedding generation for {len(texts)} texts in batches of {batch_size}")
+        
         try:
             embeddings = []
             
             # Process in batches for memory efficiency
             for start_idx in range(0, len(texts), batch_size):
                 batch_texts = texts[start_idx:start_idx + batch_size]
+                batch_num = (start_idx // batch_size) + 1
+                total_batches = (len(texts) - 1) // batch_size + 1
+                
+                print(f"[EMBEDDING] Processing batch {batch_num}/{total_batches}: {len(batch_texts)} texts")
                 
                 # Generate embeddings for batch
                 batch_embeddings = self.model.encode(
                     batch_texts,
                     convert_to_numpy=True,
                     normalize_embeddings=True,  # Critical for vector search
-                    show_progress_bar=len(texts) > 10 and start_idx == 0  # Only show progress for first batch
+                    show_progress_bar=False
                 )
                 
                 embeddings.append(batch_embeddings)
@@ -102,11 +112,13 @@ class EmbeddingGenerator:
             # Ensure float32 for Pinecone compatibility
             embeddings = embeddings.astype(np.float32)
             
-            logger.info(f"Generated {len(embeddings)} embeddings in batches of {batch_size}")
+            logger.info(f"Generated {len(embeddings)} embeddings of shape {embeddings.shape}")
+            print(f"[EMBEDDING] Successfully generated {len(embeddings)} embeddings of shape {embeddings.shape}")
             return embeddings
             
         except Exception as e:
             logger.error(f"Embedding generation failed: {e}")
+            print(f"[EMBEDDING] ERROR: Embedding generation failed: {e}")
             raise RuntimeError(f"Could not generate embeddings: {e}")
     
     def encode_single(self, text: str) -> np.ndarray:
