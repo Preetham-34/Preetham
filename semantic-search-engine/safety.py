@@ -1,4 +1,4 @@
-"""Safety and validation utilities for semantic search engine - Final version."""
+"""Safety and validation utilities - Complete final version."""
 
 import re
 import logging

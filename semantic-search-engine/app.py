@@ -1,4 +1,4 @@
-"""Main Streamlit application - Semantic Search Engine - Final corrected version."""
+"""Main Streamlit application - Complete final version with all fixes."""
 
 import streamlit as st
 import logging
@@ -27,7 +27,7 @@ def show_deployment_info():
         st.sidebar.json(info)
 
 def initialize_search_engine():
-    """Initialize the semantic search engine components with better error handling."""
+    """Initialize the semantic search engine components with complete error handling."""
     try:
         if "search_initialized" not in st.session_state:
             
@@ -58,44 +58,76 @@ def initialize_search_engine():
             
             with st.spinner("🚀 Initializing AI-powered semantic search engine..."):
                 
-                # Load dataset
+                # Load dataset - now properly returns 4 values
                 progress_bar = st.progress(0)
                 st.write("📚 Loading document dataset...")
-                ids, docs, titles, metadata = dataset_manager.load_dataset()
+                
+                try:
+                    ids, documents, titles, metadata = dataset_manager.load_dataset()
+                    logger.info(f"Successfully loaded {len(documents)} documents")
+                except Exception as e:
+                    logger.error(f"Dataset loading failed: {e}")
+                    st.error(f"Failed to load dataset: {str(e)}")
+                    st.stop()
+                
                 progress_bar.progress(20)
                 
                 # Initialize embedding generator
                 st.write("🧠 Loading AI embedding model...")
-                embedder = EmbeddingGenerator()
+                try:
+                    embedder = EmbeddingGenerator()
+                except Exception as e:
+                    logger.error(f"Embedder initialization failed: {e}")
+                    st.error(f"Failed to load embedding model: {str(e)}")
+                    st.stop()
+                
                 progress_bar.progress(40)
                 
                 # Initialize vector database
                 st.write("🗄️ Connecting to vector database...")
-                vector_db = PineconeDB()
+                try:
+                    vector_db = PineconeDB()
+                except Exception as e:
+                    logger.error(f"Vector DB initialization failed: {e}")
+                    st.error(f"Failed to connect to Pinecone: {str(e)}")
+                    st.stop()
+                
                 progress_bar.progress(60)
                 
-                # Generate embeddings
+                # Generate embeddings with batch processing
                 st.write("⚡ Generating semantic embeddings...")
-                doc_embeddings = embedder.encode(docs)
+                try:
+                    doc_embeddings = embedder.encode(documents, batch_size=32)
+                except Exception as e:
+                    logger.error(f"Embedding generation failed: {e}")
+                    st.error(f"Failed to generate embeddings: {str(e)}")
+                    st.stop()
+                
                 progress_bar.progress(80)
                 
                 # Store in vector database
                 st.write("💾 Storing embeddings in cloud database...")
-                metadata_with_content = []
-                for i, meta in enumerate(metadata):
-                    meta_copy = meta.copy()
-                    meta_copy['content'] = docs[i]
-                    metadata_with_content.append(meta_copy)
-                
-                success = vector_db.add_embeddings(
-                    ids=ids,
-                    embeddings=doc_embeddings,
-                    metadata_list=metadata_with_content
-                )
-                
-                if not success:
-                    st.error("❌ Failed to initialize vector database")
-                    st.error("Please check your Pinecone API key and try again.")
+                try:
+                    metadata_with_content = []
+                    for i, meta in enumerate(metadata):
+                        meta_copy = meta.copy()
+                        meta_copy['content'] = documents[i]
+                        metadata_with_content.append(meta_copy)
+                    
+                    success = vector_db.add_embeddings(
+                        ids=ids,
+                        embeddings=doc_embeddings,
+                        metadata_list=metadata_with_content
+                    )
+                    
+                    if not success:
+                        st.error("❌ Failed to store embeddings in vector database")
+                        st.error("Please check your Pinecone configuration and try again.")
+                        st.stop()
+                        
+                except Exception as e:
+                    logger.error(f"Vector storage failed: {e}")
+                    st.error(f"Failed to store vectors: {str(e)}")
                     st.stop()
                 
                 progress_bar.progress(100)
@@ -104,7 +136,7 @@ def initialize_search_engine():
                 st.session_state.embedder = embedder
                 st.session_state.vector_db = vector_db
                 st.session_state.dataset_info = {
-                    'total_docs': len(docs),
+                    'total_docs': len(documents),
                     'categories': list(set(meta.get('category', 'General') for meta in metadata))
                 }
                 st.session_state.search_initialized = True
@@ -135,6 +167,9 @@ def initialize_search_engine():
         elif "model" in error_str:
             st.error("🤖 **Model Issue**: Cannot load the AI model")
             st.info("This usually resolves on retry. Refresh the page.")
+        elif "title" in error_str:
+            st.error("📁 **Dataset Issue**: Problem with dataset structure")
+            st.info("The dataset format might be incorrect. Using fallback sample data.")
         
         # Show deployment info for debugging
         with st.expander("🔧 Debug Information"):
@@ -169,7 +204,10 @@ def render_sidebar():
         info = st.session_state.dataset_info
         st.sidebar.markdown("### 📊 Dataset Info:")
         st.sidebar.metric("Documents", info['total_docs'])
-        st.sidebar.write(f"**Categories**: {', '.join(info['categories'])}")
+        categories = info['categories'][:5]  # Show first 5 categories
+        if len(info['categories']) > 5:
+            categories.append("...")
+        st.sidebar.write(f"**Categories**: {', '.join(categories)}")
     
     # Example queries
     st.sidebar.markdown("### 🔍 Try These Queries:")
@@ -178,7 +216,10 @@ def render_sidebar():
         "How do neural networks work?", 
         "Explain vector databases",
         "Python programming guide",
-        "Deep learning applications"
+        "Deep learning applications",
+        "Best coffee makers",
+        "Smart home devices",
+        "Investment strategies"
     ]
     
     for example in examples:
@@ -191,7 +232,7 @@ def render_sidebar():
         show_deployment_info()
 
 def perform_semantic_search(query: str) -> List[Dict]:
-    """Perform semantic search with error handling."""
+    """Perform semantic search with complete error handling."""
     try:
         embedder = st.session_state.embedder
         vector_db = st.session_state.vector_db
@@ -217,7 +258,7 @@ def perform_semantic_search(query: str) -> List[Dict]:
         return []
 
 def display_search_results(results: List[Dict], query: str):
-    """Display search results with rich formatting."""
+    """Display search results with enhanced formatting."""
     if not results:
         st.info("🤔 No similar documents found. Try rephrasing your query or using different keywords.")
         st.markdown("**💡 Tips:**")
@@ -244,9 +285,38 @@ def display_search_results(results: List[Dict], query: str):
                 
                 # Category badge
                 category_colors = {
-                    'Programming': '🐍',
+                    'Programming': '💻',
                     'AI/ML': '🤖', 
                     'Database': '🗄️',
+                    'Open Source': '🔓',
+                    'Cloud Computing': '☁️',
+                    'Machine Learning': '🧠',
+                    'Cybersecurity': '🔐',
+                    'Coffee Equipment': '☕',
+                    'Smart Home': '🏠',
+                    'Sustainable Fashion': '🌱',
+                    'Gaming': '🎮',
+                    'Tea': '🍵',
+                    'History': '📜',
+                    'Education': '🎓',
+                    'Psychology': '🧠',
+                    'Philosophy': '💭',
+                    'Literature': '📚',
+                    'Yoga': '🧘',
+                    'Health Supplements': '💊',
+                    'Mental Health': '💚',
+                    'Recipes': '🍳',
+                    'Meditation': '🧘‍♀️',
+                    'Investment Strategies': '💰',
+                    'Business Management': '📊',
+                    'Cryptocurrency': '₿',
+                    'Venture Capital': '💼',
+                    'Marketing': '📈',
+                    'Architecture': '🏛️',
+                    'Cocktails': '🍸',
+                    'Photography': '📸',
+                    'Public Speaking': '🎤',
+                    'Musical Instruments': '🎵',
                     'General': '📄'
                 }
                 icon = category_colors.get(category, '📄')

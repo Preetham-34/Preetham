@@ -1,4 +1,4 @@
-"""Configuration management for Streamlit Cloud deployment - Final Version."""
+"""Configuration management for Streamlit Cloud deployment - Complete final version."""
 
 import os
 import streamlit as st
