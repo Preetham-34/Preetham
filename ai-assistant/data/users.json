@@ -1,0 +1,202 @@
+[
+  {
+    "user_id": "user_001",
+    "username": "alex_chen",
+    "email": "alex.chen@university.edu",
+    "full_name": "Alex Chen",
+    "role": "student",
+    "registration_date": "2023-09-15",
+    "profile": {
+      "major": "Computer Science",
+      "year": "sophomore",
+      "interests": ["programming", "artificial intelligence", "web development", "data science"],
+      "learning_style": "visual",
+      "goals": ["become a software engineer", "learn machine learning", "build web applications"],
+      "preferred_difficulty": "Intermediate",
+      "study_hours_per_week": 25
+    },
+    "enrolled_courses": ["CS101", "MATH201", "DATA301"],
+    "completed_courses": [],
+    "current_progress": {
+      "CS101": 0.85,
+      "MATH201": 0.60,
+      "DATA301": 0.30
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T14:30:00Z",
+        "action": "view",
+        "material_id": "CS101_L01",
+        "duration_minutes": 45,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-10-01T15:20:00Z", 
+        "action": "bookmark",
+        "material_id": "CS101_DOC01"
+      }
+    ]
+  },
+  {
+    "user_id": "user_002", 
+    "username": "maria_gonzalez",
+    "email": "maria.gonzalez@university.edu",
+    "full_name": "Maria Gonzalez",
+    "role": "student",
+    "registration_date": "2023-08-20",
+    "profile": {
+      "major": "Business Administration",
+      "year": "junior", 
+      "interests": ["digital marketing", "entrepreneurship", "social media", "analytics"],
+      "learning_style": "kinesthetic",
+      "goals": ["start own business", "master digital marketing", "understand data analytics"],
+      "preferred_difficulty": "Intermediate",
+      "study_hours_per_week": 20
+    },
+    "enrolled_courses": ["DATA301", "BUS400"],
+    "completed_courses": ["CS101"],
+    "current_progress": {
+      "DATA301": 0.45,
+      "BUS400": 0.70
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-09-28T09:45:00Z",
+        "action": "complete",
+        "material_id": "CS101_L01",
+        "quiz_score": 0.92
+      },
+      {
+        "timestamp": "2024-09-30T16:15:00Z",
+        "action": "view",
+        "material_id": "BUS400_L01",
+        "duration_minutes": 55,
+        "completion_rate": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "user_003",
+    "username": "david_kim",
+    "email": "david.kim@university.edu", 
+    "full_name": "David Kim",
+    "role": "graduate_student",
+    "registration_date": "2022-08-25",
+    "profile": {
+      "major": "Computer Science",
+      "year": "graduate_first",
+      "interests": ["machine learning", "artificial intelligence", "research", "algorithms"],
+      "learning_style": "analytical",
+      "goals": ["complete PhD", "publish research", "work at tech company"],
+      "preferred_difficulty": "Advanced", 
+      "study_hours_per_week": 40
+    },
+    "enrolled_courses": ["DATA301", "PHYS301"],
+    "completed_courses": ["CS101", "MATH201"],
+    "current_progress": {
+      "DATA301": 0.95,
+      "PHYS301": 0.40
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T08:00:00Z",
+        "action": "view",
+        "material_id": "DATA301_L01",
+        "duration_minutes": 70,
+        "completion_rate": 1.0
+      },
+      {
+        "timestamp": "2024-10-02T10:30:00Z",
+        "action": "view",
+        "material_id": "PHYS301_L01",
+        "duration_minutes": 65,
+        "completion_rate": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "user_004",
+    "username": "sarah_wilson",
+    "email": "sarah.wilson@university.edu",
+    "full_name": "Sarah Wilson",
+    "role": "student",
+    "registration_date": "2024-01-10",
+    "profile": {
+      "major": "Art",
+      "year": "freshman",
+      "interests": ["digital art", "design", "creativity", "visual communication"],
+      "learning_style": "visual",
+      "goals": ["become a graphic designer", "develop portfolio", "learn design software"],
+      "preferred_difficulty": "Beginner",
+      "study_hours_per_week": 15
+    },
+    "enrolled_courses": ["ART200"],
+    "completed_courses": [],
+    "current_progress": {
+      "ART200": 0.25
+    },
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-03T14:20:00Z",
+        "action": "view",
+        "material_id": "ART200_L01",
+        "duration_minutes": 40,
+        "completion_rate": 1.0
+      }
+    ]
+  },
+  {
+    "user_id": "user_005",
+    "username": "prof_johnson",
+    "email": "s.johnson@university.edu",
+    "full_name": "Dr. Sarah Johnson",
+    "role": "instructor",
+    "registration_date": "2020-06-15",
+    "profile": {
+      "major": "Computer Science",
+      "department": "Computer Science",
+      "interests": ["education", "programming", "curriculum development", "student mentoring"],
+      "teaching_style": "interactive",
+      "specializations": ["introductory programming", "computer science education", "software engineering"],
+      "preferred_difficulty": "All Levels",
+      "office_hours": "Monday/Wednesday 2-4 PM"
+    },
+    "teaching_courses": ["CS101"],
+    "interaction_history": [
+      {
+        "timestamp": "2024-10-01T09:00:00Z",
+        "action": "create_content",
+        "material_id": "CS101_L01",
+        "content_type": "video"
+      }
+    ]
+  },
+  {
+    "user_id": "user_006",
+    "username": "emma_davis",
+    "email": "emma.davis@university.edu",
+    "full_name": "Emma Davis",
+    "role": "student",
+    "registration_date": "2023-09-05",
+    "profile": {
+      "major": "History",
+      "year": "senior",
+      "interests": ["ancient history", "archaeology", "research", "writing"],
+      "learning_style": "reading",
+      "goals": ["graduate school", "become historian", "write research papers"],
+      "preferred_difficulty": "Intermediate",
+      "study_hours_per_week": 30
+    },
+    "enrolled_courses": [],
+    "completed_courses": ["CS101"],
+    "current_progress": {},
+    "interaction_history": [
+      {
+        "timestamp": "2024-09-15T11:30:00Z",
+        "action": "complete",
+        "material_id": "CS101_L02",
+        "quiz_score": 0.85
+      }
+    ]
+  }
+]

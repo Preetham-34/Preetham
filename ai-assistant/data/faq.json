@@ -1,0 +1,137 @@
+[
+  {
+    "faq_id": "faq_001",
+    "category": "Technical Support",
+    "question": "How do I reset my password?",
+    "answer": "To reset your password, go to the login page and click 'Forgot Password'. Enter your email address and you'll receive a reset link within 5 minutes. If you don't see the email, check your spam folder. The reset link expires after 24 hours for security reasons.",
+    "keywords": ["password", "reset", "login", "forgot", "email"],
+    "popularity_score": 0.95,
+    "last_updated": "2024-09-15"
+  },
+  {
+    "faq_id": "faq_002",
+    "category": "Course Access",
+    "question": "Why can't I access my enrolled course?",
+    "answer": "If you can't access an enrolled course, this could be due to several reasons: 1) The course hasn't started yet - check the start date, 2) Your enrollment payment is pending, 3) Technical issues - try clearing your browser cache and cookies, 4) Your account may be suspended - contact support if this persists.",
+    "keywords": ["course", "access", "enrolled", "payment", "technical", "browser"],
+    "popularity_score": 0.88,
+    "last_updated": "2024-09-20"
+  },
+  {
+    "faq_id": "faq_003",
+    "category": "Video Playback",
+    "question": "Videos are not playing or buffering constantly",
+    "answer": "Video playback issues are usually related to internet connection or browser settings. Try these steps: 1) Check your internet speed (minimum 5 Mbps recommended), 2) Close other applications using bandwidth, 3) Try a different browser, 4) Disable browser extensions, 5) Clear browser cache. If problems persist, try downloading the mobile app.",
+    "keywords": ["video", "playback", "buffering", "internet", "browser", "mobile app"],
+    "popularity_score": 0.82,
+    "last_updated": "2024-09-18"
+  },
+  {
+    "faq_id": "faq_004",
+    "category": "Certificates",
+    "question": "How do I get my course completion certificate?",
+    "answer": "Course completion certificates are automatically generated when you complete 100% of course materials and pass all required assessments with a score of 70% or higher. You can download your certificate from the 'My Certificates' section in your profile. Certificates are issued in PDF format and include verification codes for authenticity.",
+    "keywords": ["certificate", "completion", "download", "assessment", "verification"],
+    "popularity_score": 0.91,
+    "last_updated": "2024-09-25"
+  },
+  {
+    "faq_id": "faq_005",
+    "category": "Assignments",
+    "question": "How do I submit my assignment?",
+    "answer": "To submit assignments, go to the specific course module and click on the assignment. Upload your file (PDF, DOC, or TXT formats accepted, max 10MB) and add any comments if required. Click 'Submit' when ready. You can resubmit before the deadline if needed. Late submissions may receive point deductions as specified in the course syllabus.",
+    "keywords": ["assignment", "submit", "upload", "file", "deadline", "resubmit"],
+    "popularity_score": 0.89,
+    "last_updated": "2024-09-28"
+  },
+  {
+    "faq_id": "faq_006",
+    "category": "Payment & Refunds",
+    "question": "How do I request a refund for a course?",
+    "answer": "Course refunds are available within 30 days of enrollment if you've completed less than 25% of the course content. To request a refund, go to 'My Account' > 'Billing' > 'Request Refund' and select the course. Refunds are processed within 5-7 business days to your original payment method. Note that courses purchased with promotional credits are not eligible for cash refunds.",
+    "keywords": ["refund", "payment", "billing", "enrollment", "money back"],
+    "popularity_score": 0.76,
+    "last_updated": "2024-09-22"
+  },
+  {
+    "faq_id": "faq_007",
+    "category": "Mobile App",
+    "question": "How do I download course videos for offline viewing?",
+    "answer": "To download videos for offline viewing, you need the mobile app (iOS/Android). Open the app, go to your enrolled course, and tap the download icon next to each video. Downloaded videos are available for 30 days and will automatically delete after this period. Note that not all courses support offline downloads due to licensing restrictions.",
+    "keywords": ["download", "offline", "mobile app", "videos", "iOS", "Android"],
+    "popularity_score": 0.84,
+    "last_updated": "2024-09-19"
+  },
+  {
+    "faq_id": "faq_008",
+    "category": "Account Management",
+    "question": "How do I change my email address?",
+    "answer": "To change your email address, go to 'Account Settings' > 'Personal Information' and click 'Edit' next to your email. Enter your new email address and click 'Update'. You'll receive verification emails at both your old and new addresses. Click the verification link in the new email address to confirm the change. This process helps protect your account security.",
+    "keywords": ["email", "change", "account", "verification", "update"],
+    "popularity_score": 0.67,
+    "last_updated": "2024-09-17"
+  },
+  {
+    "faq_id": "faq_009",
+    "category": "Discussion Forums",
+    "question": "How do I participate in course discussions?",
+    "answer": "Each course has a discussion forum where you can interact with instructors and fellow students. Access the forum from your course dashboard. You can post questions, share insights, or respond to others. Please follow community guidelines: be respectful, stay on topic, and avoid sharing personal information. Instructors typically respond within 24-48 hours during weekdays.",
+    "keywords": ["discussion", "forum", "community", "questions", "interaction"],
+    "popularity_score": 0.73,
+    "last_updated": "2024-09-24"
+  },
+  {
+    "faq_id": "faq_010",
+    "category": "Grading",
+    "question": "How is my course grade calculated?",
+    "answer": "Course grades are calculated based on the weightings specified in each course syllabus. Typically: assignments (40%), quizzes (30%), final project/exam (30%). You can view your current grade and progress in the 'Grades' section of each course. Grades are updated within 3-5 days after submission. If you have concerns about a grade, you can request a review through the 'Contact Instructor' feature.",
+    "keywords": ["grade", "calculation", "assignment", "quiz", "exam", "syllabus"],
+    "popularity_score": 0.79,
+    "last_updated": "2024-09-21"
+  },
+  {
+    "faq_id": "faq_011",
+    "category": "Course Selection",
+    "question": "What are the prerequisites for advanced courses?",
+    "answer": "Prerequisites vary by course and are listed on each course page under 'Course Requirements'. Common prerequisites include: completing foundational courses, having relevant work experience, or demonstrating proficiency through placement tests. Some courses offer 'Recommended Background' suggestions rather than strict requirements. Contact academic advisors if you're unsure about your readiness for a particular course.",
+    "keywords": ["prerequisites", "requirements", "advanced", "courses", "background"],
+    "popularity_score": 0.71,
+    "last_updated": "2024-09-23"
+  },
+  {
+    "faq_id": "faq_012",
+    "category": "Accessibility",
+    "question": "What accessibility features are available?",
+    "answer": "Our platform supports various accessibility features: closed captions for all videos, screen reader compatibility, keyboard navigation, adjustable playback speeds, high contrast mode, and transcript downloads. For additional accommodations, contact our accessibility team at accessibility@platform.edu. We're committed to making education accessible to all learners.",
+    "keywords": ["accessibility", "captions", "screen reader", "disabilities", "accommodations"],
+    "popularity_score": 0.65,
+    "last_updated": "2024-09-16"
+  },
+  {
+    "faq_id": "faq_013",
+    "category": "Study Tips",
+    "question": "How can I stay motivated and manage my time effectively?",
+    "answer": "Effective online learning requires good time management and self-motivation. Tips: 1) Set a regular study schedule, 2) Create a dedicated study space, 3) Break large tasks into smaller chunks, 4) Use the platform's progress tracking, 5) Join study groups through discussion forums, 6) Set realistic goals and celebrate achievements. Our Learning Success team offers free coaching sessions.",
+    "keywords": ["motivation", "time management", "study tips", "schedule", "goals"],
+    "popularity_score": 0.78,
+    "last_updated": "2024-09-26"
+  },
+  {
+    "faq_id": "faq_014",
+    "category": "Group Projects",
+    "question": "How do group projects work in online courses?",
+    "answer": "Group projects are facilitated through our collaboration tools. You'll be assigned to groups of 3-5 students and given access to shared workspaces, video conferencing, and file sharing. Groups can communicate through dedicated forums and schedule virtual meetings. All group members receive the same grade unless individual contributions are specifically assessed. Conflict resolution support is available if needed.",
+    "keywords": ["group project", "collaboration", "teamwork", "workspace", "communication"],
+    "popularity_score": 0.69,
+    "last_updated": "2024-09-27"
+  },
+  {
+    "faq_id": "faq_015",
+    "category": "Technical Support",
+    "question": "The platform is running slowly or not loading properly",
+    "answer": "Platform performance issues can often be resolved with these steps: 1) Clear your browser cache and cookies, 2) Disable browser extensions temporarily, 3) Try a different browser (Chrome, Firefox, Safari, Edge), 4) Check your internet connection speed, 5) Close other tabs and applications, 6) Restart your browser. If problems persist, report them through our technical support portal with details about your browser and operating system.",
+    "keywords": ["slow", "loading", "performance", "browser", "cache", "internet"],
+    "popularity_score": 0.86,
+    "last_updated": "2024-09-29"
+  }
+]

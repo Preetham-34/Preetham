@@ -1,0 +1,36 @@
+# Dependencies
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+env/
+venv/
+.venv/
+
+# Environment Variables
+.env
+.env.local
+
+# Streamlit Secrets
+.streamlit/secrets.toml
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Model cache
+.cache/
+.sentence_transformers/
+
+# Temporary files
+*.tmp
+*.temp

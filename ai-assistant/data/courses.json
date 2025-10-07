@@ -1,0 +1,174 @@
+[
+  {
+    "course_id": "CS101",
+    "course_title": "Introduction to Computer Science",
+    "course_description": "Fundamental concepts of computer science including programming, algorithms, data structures, and computational thinking. Perfect for beginners starting their journey in technology.",
+    "instructor": "Dr. Sarah Johnson",
+    "subject_area": "Computer Science",
+    "difficulty_level": "Beginner",
+    "duration_weeks": 12,
+    "enrollment_count": 1250,
+    "rating": 4.7,
+    "created_date": "2024-01-15",
+    "materials": [
+      {
+        "material_id": "CS101_L01",
+        "title": "What is Computer Science?",
+        "type": "video",
+        "content": "Computer science is the study of algorithmic processes, computational systems and the design of computer systems and their applications. It encompasses both theoretical foundations and practical applications, making it one of the most versatile fields in modern education. Students learn programming languages like Python and Java, understand how computers work at the hardware level, and explore applications from web development to artificial intelligence.",
+        "duration_minutes": 45,
+        "transcript": "Welcome to Introduction to Computer Science. Today we'll explore what computer science really means and why it's become so important in our daily lives. Computer science isn't just about programming - it's about problem-solving, logical thinking, and creating solutions that can impact millions of people.",
+        "tags": ["introduction", "overview", "fundamentals"]
+      },
+      {
+        "material_id": "CS101_L02",
+        "title": "Programming Fundamentals with Python",
+        "type": "video",
+        "content": "Python programming basics covering variables, data types, control structures, and functions. This comprehensive introduction teaches students how to write their first programs and understand programming logic. Topics include syntax, debugging, and best practices for writing clean, readable code.",
+        "duration_minutes": 60,
+        "transcript": "Let's dive into Python programming. Python is known for its simple, readable syntax that makes it perfect for beginners. We'll start with variables - think of them as containers that store data. Then we'll learn about different data types like strings, integers, and lists.",
+        "tags": ["python", "programming", "variables", "functions"]
+      },
+      {
+        "material_id": "CS101_DOC01",
+        "title": "Computer Science Career Guide",
+        "type": "document",
+        "content": "Comprehensive guide to computer science careers including software engineering, data science, cybersecurity, artificial intelligence, and web development. Covers salary expectations, required skills, educational paths, and industry trends for 2024-2025.",
+        "pages": 25,
+        "tags": ["careers", "jobs", "industry", "salary"]
+      }
+    ]
+  },
+  {
+    "course_id": "MATH201",
+    "course_title": "Calculus I",
+    "course_description": "Differential and integral calculus with applications. Covers limits, derivatives, integrals, and the fundamental theorem of calculus with real-world problem solving.",
+    "instructor": "Prof. Michael Chen",
+    "subject_area": "Mathematics", 
+    "difficulty_level": "Intermediate",
+    "duration_weeks": 16,
+    "enrollment_count": 890,
+    "rating": 4.5,
+    "created_date": "2023-08-20",
+    "materials": [
+      {
+        "material_id": "MATH201_L01",
+        "title": "Introduction to Limits",
+        "type": "video",
+        "content": "Understanding the concept of limits as the foundation of calculus. Limits describe the behavior of functions as inputs approach certain values. This fundamental concept leads to derivatives and integrals, making it essential for all future calculus work.",
+        "duration_minutes": 50,
+        "transcript": "Limits are the gateway to calculus. When we say the limit of f(x) as x approaches 3 equals 7, we mean that as x gets arbitrarily close to 3, f(x) gets arbitrarily close to 7. This concept might seem abstract now, but it's the foundation for everything we'll do in calculus.",
+        "tags": ["limits", "calculus", "functions", "mathematics"]
+      }
+    ]
+  },
+  {
+    "course_id": "DATA301",
+    "course_title": "Data Science with Python",
+    "course_description": "Comprehensive data science course covering data analysis, visualization, machine learning, and statistical modeling using Python, pandas, and scikit-learn.",
+    "instructor": "Dr. James Park",
+    "subject_area": "Computer Science",
+    "difficulty_level": "Advanced",
+    "duration_weeks": 12,
+    "enrollment_count": 1800,
+    "rating": 4.8,
+    "created_date": "2024-02-15",
+    "materials": [
+      {
+        "material_id": "DATA301_L01",
+        "title": "Data Analysis with Pandas",
+        "type": "video",
+        "content": "Introduction to data manipulation and analysis using pandas library. Covers DataFrames, data cleaning, filtering, grouping, and merging datasets for real-world data science projects.",
+        "duration_minutes": 70,
+        "transcript": "Pandas is the backbone of data science in Python. It provides powerful data structures like DataFrames that make working with structured data intuitive and efficient. Today we'll learn how to load, clean, and analyze real datasets.",
+        "tags": ["pandas", "data-analysis", "python", "dataframes"]
+      }
+    ]
+  },
+  {
+    "course_id": "BUS400",
+    "course_title": "Digital Marketing Strategy",
+    "course_description": "Modern digital marketing techniques including social media marketing, content strategy, SEO, email marketing, and analytics. Learn to create effective marketing campaigns that drive business growth.",
+    "instructor": "Prof. Lisa Rodriguez",
+    "subject_area": "Business",
+    "difficulty_level": "Intermediate",
+    "duration_weeks": 10,
+    "enrollment_count": 650,
+    "rating": 4.6,
+    "created_date": "2024-03-10",
+    "materials": [
+      {
+        "material_id": "BUS400_L01",
+        "title": "Social Media Marketing Fundamentals",
+        "type": "video",
+        "content": "Understanding social media platforms, audience targeting, content creation, and engagement strategies. Learn how to build brand presence across Facebook, Instagram, Twitter, LinkedIn, and TikTok.",
+        "duration_minutes": 55,
+        "transcript": "Social media marketing is about building relationships with your audience. Each platform has its unique culture and best practices. We'll explore how to create authentic content that resonates with your target demographic.",
+        "tags": ["social-media", "marketing", "branding", "engagement"]
+      },
+      {
+        "material_id": "BUS400_DOC01",
+        "title": "Digital Marketing Campaign Planner",
+        "type": "document",
+        "content": "Step-by-step guide for planning and executing digital marketing campaigns. Includes templates for content calendars, budget planning, performance metrics, and ROI calculation.",
+        "pages": 18,
+        "tags": ["campaigns", "planning", "templates", "metrics"]
+      }
+    ]
+  },
+  {
+    "course_id": "PHYS301",
+    "course_title": "Quantum Mechanics",
+    "course_description": "Introduction to quantum mechanics principles including wave-particle duality, uncertainty principle, Schrödinger equation, and quantum applications in modern technology.",
+    "instructor": "Dr. Robert Wilson",
+    "subject_area": "Physics",
+    "difficulty_level": "Advanced",
+    "duration_weeks": 14,
+    "enrollment_count": 320,
+    "rating": 4.4,
+    "created_date": "2024-01-20",
+    "materials": [
+      {
+        "material_id": "PHYS301_L01",
+        "title": "Wave-Particle Duality",
+        "type": "video",
+        "content": "Exploring the fundamental concept that particles exhibit both wave and particle properties. Understanding the double-slit experiment, de Broglie wavelength, and implications for quantum mechanics.",
+        "duration_minutes": 65,
+        "transcript": "The concept of wave-particle duality revolutionized our understanding of matter and energy. Light can behave as both a wave and a particle depending on how we observe it. This isn't just a theoretical curiosity - it's the foundation of quantum technology.",
+        "tags": ["quantum", "duality", "waves", "particles", "physics"]
+      }
+    ]
+  },
+  {
+    "course_id": "ART200",
+    "course_title": "Digital Art and Design",
+    "course_description": "Creative digital art techniques using modern design software. Covers digital illustration, photo manipulation, typography, color theory, and portfolio development.",
+    "instructor": "Prof. Amanda Foster",
+    "subject_area": "Art",
+    "difficulty_level": "Beginner",
+    "duration_weeks": 8,
+    "enrollment_count": 420,
+    "rating": 4.3,
+    "created_date": "2024-04-05",
+    "materials": [
+      {
+        "material_id": "ART200_L01",
+        "title": "Introduction to Digital Art",
+        "type": "video",
+        "content": "Overview of digital art tools and techniques. Introduction to popular software like Photoshop, Illustrator, and Procreate. Understanding digital canvases, layers, and basic drawing tools.",
+        "duration_minutes": 40,
+        "transcript": "Digital art opens up unlimited creative possibilities. Unlike traditional media, you can easily undo mistakes, experiment with colors, and create multiple versions of your artwork. We'll start with the basics and build up to advanced techniques.",
+        "tags": ["digital-art", "software", "creativity", "design"]
+      },
+      {
+        "material_id": "ART200_L02",
+        "title": "Color Theory in Digital Design",
+        "type": "video",
+        "content": "Understanding color relationships, harmony, contrast, and psychology in digital design. Learn to create effective color palettes and use color to convey emotion and meaning.",
+        "duration_minutes": 35,
+        "transcript": "Color is one of the most powerful tools in design. It can evoke emotions, create hierarchy, and guide the viewer's attention. We'll explore the color wheel, complementary colors, and how to choose colors that work well together.",
+        "tags": ["color-theory", "design", "palettes", "psychology"]
+      }
+    ]
+  }
+]
