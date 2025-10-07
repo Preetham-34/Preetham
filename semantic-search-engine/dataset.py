@@ -4,7 +4,7 @@ import json
 import logging
 import os
 from typing import List, Dict, Tuple
-import os
+
 print('[DEBUG] Working directory:', os.getcwd())
 print('[DEBUG] Files here:', os.listdir('.'))
 print('[DEBUG] File data.json exists?', os.path.exists('data.json'))
@@ -13,15 +13,10 @@ logger = logging.getLogger(__name__)
 
 class DatasetManager:
     """Manages document datasets with validation and error handling."""
+
     def __init__(self, data_file_path: str = "semantic-search-engine/data.json"):
-
-    def __init__(self, data_file_path: str = "data.json"):
         self.data_file_path = data_file_path
-        self.sample_data = self._get_sample_documents()
-
-    def _get_sample_documents(self) -> List[Dict]:
-        """Default sample dataset in case no file is found."""
-        return [
+        self.sample_data = [
             {
                 "id": "doc_001",
                 "title": "Python Programming Fundamentals",
