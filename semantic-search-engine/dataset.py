@@ -206,5 +206,4 @@ class DatasetManager:
         logger.info(f"Extracted {len(ids)} documents for processing")
         return ids, documents, titles, metadata_list
 
-# Global instance for import convenience
 dataset_manager = DatasetManager()
