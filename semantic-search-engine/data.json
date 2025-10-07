@@ -1,0 +1,457 @@
+[
+  {
+    "id": "doc_001",
+    "title": "Python Programming Fundamentals",
+    "content": "Python is a versatile, high-level programming language known for its simplicity and readability. It supports multiple programming paradigms including object-oriented, functional, and procedural programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing. Its extensive standard library and active community make it an excellent choice for both beginners and experienced developers.",
+    "category": "Programming",
+    "tags": ["python", "programming", "basics", "syntax", "development"]
+  },
+  {
+    "id": "doc_002",
+    "title": "JavaScript ES6 Modern Features",
+    "content": "JavaScript ES6 introduced revolutionary features like arrow functions, destructuring, template literals, and modules. Modern JavaScript development leverages async/await for asynchronous programming, making code more readable and maintainable. Popular frameworks like React, Vue, and Angular build upon these ES6 foundations for creating dynamic web applications.",
+    "category": "Programming",
+    "tags": ["javascript", "es6", "async", "frameworks", "web-development"]
+  },
+  {
+    "id": "doc_003",
+    "title": "Java Enterprise Development",
+    "content": "Java remains a cornerstone of enterprise software development with its robust ecosystem including Spring Framework, Hibernate ORM, and Maven build tools. Java's platform independence, strong typing system, and extensive libraries make it ideal for large-scale applications, microservices architecture, and Android mobile development.",
+    "category": "Programming",
+    "tags": ["java", "enterprise", "spring", "android", "backend"]
+  },
+  {
+    "id": "doc_004",
+    "title": "C++ System Programming",
+    "content": "C++ provides low-level control and high performance for system programming, game development, and embedded systems. Modern C++ (C++11/14/17/20) introduces smart pointers, lambda functions, and improved standard library. C++ is essential for performance-critical applications, operating systems, and real-time systems.",
+    "category": "Programming",
+    "tags": ["cpp", "system-programming", "performance", "embedded", "gaming"]
+  },
+  {
+    "id": "doc_005",
+    "title": "Machine Learning Fundamentals",
+    "content": "Machine learning is a subset of artificial intelligence that enables computers to learn and improve from experience without being explicitly programmed. It involves algorithms that can identify patterns in data and make predictions or decisions. Common applications include recommendation systems, image recognition, natural language processing, and predictive analytics. Machine learning algorithms can be supervised, unsupervised, or reinforcement-based.",
+    "category": "AI/ML",
+    "tags": ["machine-learning", "ai", "algorithms", "data-science", "patterns"]
+  },
+  {
+    "id": "doc_006",
+    "title": "Deep Learning Neural Networks",
+    "content": "Deep learning is a machine learning technique inspired by the human brain's neural networks. It uses multiple layers of artificial neurons to learn complex patterns in data. Deep learning has revolutionized computer vision, natural language processing, and speech recognition through architectures like CNNs, RNNs, and Transformers. These models can automatically extract features from raw data without manual feature engineering.",
+    "category": "AI/ML",
+    "tags": ["deep-learning", "neural-networks", "cnn", "rnn", "transformers"]
+  },
+  {
+    "id": "doc_007",
+    "title": "Natural Language Processing Applications",
+    "content": "Natural Language Processing (NLP) combines computational linguistics with machine learning to help computers understand, interpret, and generate human language. Modern NLP uses transformer models like BERT and GPT for tasks such as sentiment analysis, machine translation, text summarization, and question answering. NLP has applications in chatbots, search engines, content analysis, and automated customer support.",
+    "category": "AI/ML",
+    "tags": ["nlp", "transformers", "bert", "gpt", "language-models"]
+  },
+  {
+    "id": "doc_008",
+    "title": "Computer Vision and Image Recognition",
+    "content": "Computer vision enables machines to interpret and understand visual information from images and videos. Using convolutional neural networks (CNNs), systems can perform object detection, facial recognition, medical image analysis, and autonomous vehicle navigation. Popular frameworks include OpenCV, TensorFlow, and PyTorch for building vision applications.",
+    "category": "AI/ML",
+    "tags": ["computer-vision", "image-recognition", "cnn", "opencv", "object-detection"]
+  },
+  {
+    "id": "doc_009",
+    "title": "Reinforcement Learning Systems",
+    "content": "Reinforcement learning involves training agents to make decisions through interaction with environments, learning from rewards and penalties. Applications include game playing (like AlphaGo), robotics, autonomous systems, and recommendation engines. Key algorithms include Q-learning, policy gradients, and actor-critic methods for different problem domains.",
+    "category": "AI/ML",
+    "tags": ["reinforcement-learning", "agents", "q-learning", "robotics", "gaming"]
+  },
+  {
+    "id": "doc_010",
+    "title": "Vector Databases for AI Applications",
+    "content": "Vector databases are specialized database systems designed to store, index, and search high-dimensional vector embeddings efficiently. They enable semantic search by finding similar vectors based on mathematical distance metrics like cosine similarity. Vector databases are essential for building RAG applications, recommendation systems, and similarity search engines. Popular vector databases include Pinecone, Weaviate, Chroma, and Qdrant.",
+    "category": "Database",
+    "tags": ["vector-database", "embeddings", "semantic-search", "similarity", "rag"]
+  },
+  {
+    "id": "doc_011",
+    "title": "NoSQL Database Solutions",
+    "content": "NoSQL databases provide flexible, scalable alternatives to traditional relational databases. MongoDB offers document-based storage, Cassandra provides column-family architecture, Redis delivers in-memory key-value storage, and Neo4j specializes in graph databases. Each NoSQL type serves specific use cases from web applications to big data analytics.",
+    "category": "Database",
+    "tags": ["nosql", "mongodb", "cassandra", "redis", "graph-database"]
+  },
+  {
+    "id": "doc_012",
+    "title": "SQL Database Design and Optimization",
+    "content": "Relational databases using SQL remain fundamental for structured data storage and complex queries. Database design principles include normalization, indexing strategies, and query optimization. Popular SQL databases include PostgreSQL for advanced features, MySQL for web applications, and Oracle for enterprise solutions. Performance tuning involves index optimization and query analysis.",
+    "category": "Database",
+    "tags": ["sql", "postgresql", "mysql", "database-design", "optimization"]
+  },
+  {
+    "id": "doc_013",
+    "title": "React Component Development",
+    "content": "React Component Library - A comprehensive library of reusable React components for modern web applications. Built with TypeScript, includes forms, navigation, data tables, and UI elements with comprehensive documentation and storybook examples. Component-driven development promotes reusability, maintainability, and consistent user interfaces across applications.",
+    "category": "Open Source",
+    "tags": ["react", "typescript", "components", "frontend", "ui"]
+  },
+  {
+    "id": "doc_014",
+    "title": "Vue.js Progressive Framework",
+    "content": "Vue.js is a progressive JavaScript framework for building user interfaces and single-page applications. Its gentle learning curve, excellent documentation, and flexible architecture make it popular among developers. Vue 3 introduces the Composition API, improved TypeScript support, and better performance through proxy-based reactivity.",
+    "category": "Open Source",
+    "tags": ["vue", "javascript", "frontend", "spa", "composition-api"]
+  },
+  {
+    "id": "doc_015",
+    "title": "Node.js Backend Development",
+    "content": "Node.js enables JavaScript development on the server side using Chrome's V8 engine. Popular for building REST APIs, real-time applications, and microservices. The npm ecosystem provides extensive libraries, while frameworks like Express.js and Fastify simplify web application development. Node.js excels in I/O-intensive applications.",
+    "category": "Open Source",
+    "tags": ["nodejs", "backend", "api", "express", "npm"]
+  },
+  {
+    "id": "doc_016",
+    "title": "Docker Containerization Platform",
+    "content": "Docker revolutionizes application deployment through containerization, packaging applications with their dependencies into lightweight, portable containers. Docker simplifies development workflows, ensures consistency across environments, and enables microservices architecture. Container orchestration with Kubernetes manages Docker containers at scale.",
+    "category": "Open Source",
+    "tags": ["docker", "containers", "deployment", "kubernetes", "microservices"]
+  },
+  {
+    "id": "doc_017",
+    "title": "AWS Lambda Serverless Computing",
+    "content": "AWS Lambda is a serverless compute service that runs code in response to events and automatically manages underlying compute resources. Pay-per-request pricing model supports event-driven applications, API backends, data processing, and microservices. Competes with Google Cloud Functions, Azure Functions, and Cloudflare Workers.",
+    "category": "Cloud Computing",
+    "tags": ["aws", "serverless", "lambda", "cloud", "computing"]
+  },
+  {
+    "id": "doc_018",
+    "title": "Google Cloud Platform Services",
+    "content": "Google Cloud Platform (GCP) offers comprehensive cloud services including Compute Engine for virtual machines, Cloud Storage for object storage, BigQuery for data analytics, and Cloud AI for machine learning. GCP's global infrastructure and competitive pricing make it attractive for startups and enterprises seeking cloud migration.",
+    "category": "Cloud Computing",
+    "tags": ["gcp", "google-cloud", "bigquery", "cloud-storage", "compute-engine"]
+  },
+  {
+    "id": "doc_019",
+    "title": "Microsoft Azure Cloud Solutions",
+    "content": "Microsoft Azure provides enterprise-grade cloud computing services including Azure Virtual Machines, Azure SQL Database, Azure Active Directory, and Azure DevOps. Strong integration with Microsoft ecosystem makes Azure popular for enterprises using Windows Server, Office 365, and .NET technologies. Azure AI services offer cognitive capabilities.",
+    "category": "Cloud Computing",
+    "tags": ["azure", "microsoft", "virtual-machines", "sql-database", "devops"]
+  },
+  {
+    "id": "doc_020",
+    "title": "Amazon Web Services Overview",
+    "content": "Amazon Web Services (AWS) leads cloud computing with over 200 services including EC2 compute, S3 storage, RDS databases, and Route 53 DNS. AWS serves millions of customers from startups to Fortune 500 companies. Services span computing, storage, databases, analytics, machine learning, and IoT across global regions.",
+    "category": "Cloud Computing",
+    "tags": ["aws", "ec2", "s3", "rds", "cloud-infrastructure"]
+  },
+  {
+    "id": "doc_021",
+    "title": "Cybersecurity Threat Landscape",
+    "content": "Modern cybersecurity faces evolving threats including ransomware, phishing attacks, supply chain vulnerabilities, and advanced persistent threats (APTs). Organizations must implement defense-in-depth strategies combining firewalls, intrusion detection, endpoint protection, and security awareness training. Zero-trust architecture becomes essential for modern security.",
+    "category": "Cybersecurity",
+    "tags": ["cybersecurity", "threats", "ransomware", "zero-trust", "defense"]
+  },
+  {
+    "id": "doc_022",
+    "title": "Log4Shell Vulnerability Analysis",
+    "content": "Log4Shell (CVE-2021-44228) represents one of the most critical vulnerabilities in recent history, affecting Apache Log4j versions 2.0-2.14.1. This remote code execution vulnerability allows attackers to execute arbitrary code through LDAP/JNDI injection in log messages. Organizations worldwide rushed to patch systems, highlighting the importance of dependency management and vulnerability scanning.",
+    "category": "Cybersecurity",
+    "tags": ["log4shell", "vulnerability", "cve", "apache", "rce"]
+  },
+  {
+    "id": "doc_023",
+    "title": "Network Security Best Practices",
+    "content": "Network security requires comprehensive protection including firewalls, VPNs, intrusion detection systems (IDS), and network segmentation. Modern approaches include software-defined perimeter (SDP), microsegmentation, and network access control (NAC). Regular penetration testing and vulnerability assessments help identify security gaps.",
+    "category": "Cybersecurity",
+    "tags": ["network-security", "firewall", "vpn", "ids", "penetration-testing"]
+  },
+  {
+    "id": "doc_024",
+    "title": "Identity and Access Management",
+    "content": "Identity and Access Management (IAM) controls user access to systems and resources through authentication, authorization, and accounting (AAA). Modern IAM includes single sign-on (SSO), multi-factor authentication (MFA), privileged access management (PAM), and identity governance. Cloud IAM services like Azure AD and AWS IAM provide scalable solutions.",
+    "category": "Cybersecurity",
+    "tags": ["iam", "authentication", "sso", "mfa", "access-control"]
+  },
+  {
+    "id": "doc_025",
+    "title": "Breville Barista Express Espresso Machine",
+    "content": "Breville Barista Express BES870XL combines espresso brewing with integrated conical burr grinder in one compact machine. Features 67 fl oz water capacity, 15 bar pressure pump, PID temperature control, and steam wand for milk frothing. Highly rated for consistent espresso extraction and convenience, though requires learning curve for optimal results. Price range $600-700.",
+    "category": "Coffee Equipment",
+    "tags": ["breville", "espresso", "grinder", "barista", "coffee"]
+  },
+  {
+    "id": "doc_026",
+    "title": "Technivorm Moccamaster Pour-Over",
+    "content": "Technivorm Moccamaster represents the gold standard in drip coffee makers with precise temperature control (196-205°F), optimal brewing time (4-6 minutes), and handmade craftsmanship in the Netherlands. SCAA certified for exceptional coffee extraction, the copper heating element and unique showerhead design ensure even saturation. Built to last with 5-year warranty.",
+    "category": "Coffee Equipment",
+    "tags": ["technivorm", "moccamaster", "drip", "scaa", "pour-over"]
+  },
+  {
+    "id": "doc_027",
+    "title": "Hario V60 Manual Brewing",
+    "content": "Hario V60 ceramic dripper enables precise manual pour-over coffee brewing with its unique 60-degree angle and spiral ridges. This affordable brewing method allows complete control over water temperature, pouring technique, and extraction time. Popular among coffee enthusiasts and third-wave coffee shops for highlighting origin characteristics.",
+    "category": "Coffee Equipment",
+    "tags": ["hario", "v60", "pour-over", "manual", "ceramic"]
+  },
+  {
+    "id": "doc_028",
+    "title": "Chemex Glass Coffee Maker",
+    "content": "Chemex combines elegant design with exceptional coffee brewing using thick paper filters that remove oils and fine particles. The iconic hourglass shape made from borosilicate glass has remained unchanged since 1941. Chemex produces clean, bright coffee with clarity of flavor, making it a favorite for light roast single-origin coffees.",
+    "category": "Coffee Equipment",
+    "tags": ["chemex", "glass", "filter", "single-origin", "clean"]
+  },
+  {
+    "id": "doc_029",
+    "title": "Philips Hue Smart Lighting System",
+    "content": "Philips Hue Color Smart Bulbs offer 16 million colors and seamless dimming capabilities for personalized home lighting. Compatible with major smart home platforms including Alexa, Google Assistant, and Apple HomeKit. Energy-efficient 9W LED consumption, easy installation via Hue Bridge, and mobile app control. Create scenes, schedules, and automation routines.",
+    "category": "Smart Home",
+    "tags": ["philips", "hue", "smart-lights", "alexa", "homekit"]
+  },
+  {
+    "id": "doc_030",
+    "title": "Ring Video Doorbell Pro Security",
+    "content": "Ring Video Doorbell Pro features 1080p HD video, advanced motion detection, and customizable motion zones for enhanced home security. Two-way audio allows communication with visitors, while cloud recording stores footage for review. Seamless integration with Alexa and Ring Alarm system. Professional installation recommended for hardwired operation.",
+    "category": "Smart Home",
+    "tags": ["ring", "doorbell", "security", "1080p", "motion"]
+  },
+  {
+    "id": "doc_031",
+    "title": "Nest Learning Thermostat",
+    "content": "Google Nest Learning Thermostat automatically learns your schedule and temperature preferences to optimize energy efficiency. Features include remote smartphone control, energy usage reports, and integration with Google Assistant and Alexa. The sleek design with high-resolution display complements modern homes while reducing heating and cooling costs up to 15%.",
+    "category": "Smart Home",
+    "tags": ["nest", "thermostat", "google", "energy", "learning"]
+  },
+  {
+    "id": "doc_032",
+    "title": "SmartThings Home Automation Hub",
+    "content": "Samsung SmartThings Hub connects and controls diverse smart home devices through Zigbee, Z-Wave, and Wi-Fi protocols. Create complex automation routines, monitor security sensors, and integrate with voice assistants. The platform supports thousands of compatible devices from lights and locks to cameras and sensors, making it ideal for comprehensive home automation.",
+    "category": "Smart Home",
+    "tags": ["smartthings", "hub", "zigbee", "z-wave", "automation"]
+  },
+  {
+    "id": "doc_033",
+    "title": "August Smart Lock Pro",
+    "content": "August Smart Lock Pro transforms traditional deadbolts into smart locks without replacing existing hardware. Features include smartphone unlocking, guest access codes, auto-lock functionality, and integration with Airbnb for rental properties. Wi-Fi Connect bridge enables remote access and notifications. Professional installation available for complex setups.",
+    "category": "Smart Home",
+    "tags": ["august", "smart-lock", "deadbolt", "smartphone", "airbnb"]
+  },
+  {
+    "id": "doc_034",
+    "title": "Patagonia Sustainable Outdoor Gear",
+    "content": "Patagonia leads sustainable fashion through organic cotton, recycled materials, and Fair Trade manufacturing practices. The company's mission to 'cause no unnecessary harm' drives innovations in eco-friendly materials and repair programs. Product range spans outdoor apparel, gear, and accessories with lifetime repair guarantees. Price range $35-800 for premium sustainable products.",
+    "category": "Sustainable Fashion",
+    "tags": ["patagonia", "sustainable", "organic", "fair-trade", "outdoor"]
+  },
+  {
+    "id": "doc_035",
+    "title": "Eileen Fisher Conscious Design",
+    "content": "Eileen Fisher emphasizes timeless design, sustainable materials, and circular fashion through their Renew program. Uses organic linen, TENCEL™, recycled cashmere, and responsibly sourced materials. The brand focuses on versatile, high-quality pieces that transcend seasonal trends. Take-back program recycles old garments into new designs.",
+    "category": "Sustainable Fashion",
+    "tags": ["eileen-fisher", "linen", "tencel", "circular", "timeless"]
+  },
+  {
+    "id": "doc_036",
+    "title": "Allbirds Sustainable Footwear",
+    "content": "Allbirds revolutionizes footwear with natural materials including merino wool, eucalyptus tree fiber, and sugarcane-based foam. The company measures and offsets carbon footprint for all products while maintaining comfort and style. Direct-to-consumer model reduces costs while ensuring quality and sustainability transparency.",
+    "category": "Sustainable Fashion",
+    "tags": ["allbirds", "merino-wool", "eucalyptus", "carbon-neutral", "footwear"]
+  },
+  {
+    "id": "doc_037",
+    "title": "Everlane Ethical Manufacturing",
+    "content": "Everlane provides radical transparency in fashion manufacturing, revealing true costs and factory conditions. Partners with ethical factories meeting strict labor and environmental standards. Focus on quality basics and wardrobe essentials at fair prices. The brand's 'Choose What You Pay' model and detailed supply chain information build consumer trust.",
+    "category": "Sustainable Fashion",
+    "tags": ["everlane", "transparency", "ethical", "basics", "fair-price"]
+  },
+  {
+    "id": "doc_038",
+    "title": "The Legend of Zelda: Tears of the Kingdom",
+    "content": "The Legend of Zelda: Tears of the Kingdom expands upon Breath of the Wild with innovative sky exploration, Fuse crafting system, and Ultrahand construction mechanics. Players can create vehicles, structures, and weapons using environmental objects. The game received universal critical acclaim for creativity, world design, and technical achievement on Nintendo Switch hardware.",
+    "category": "Gaming",
+    "tags": ["zelda", "nintendo", "open-world", "crafting", "exploration"]
+  },
+  {
+    "id": "doc_039",
+    "title": "Cyberpunk 2077: Phantom Liberty",
+    "content": "Cyberpunk 2077: Phantom Liberty expansion redeems the base game with improved systems, compelling storyline, and enhanced visual fidelity. Features Keanu Reeves, improved AI, vehicle combat, and ray-traced graphics. The expansion demonstrates CD Projekt RED's commitment to fixing initial launch issues while delivering the cyberpunk experience originally promised.",
+    "category": "Gaming",
+    "tags": ["cyberpunk", "expansion", "keanu-reeves", "ray-tracing", "redemption"]
+  },
+  {
+    "id": "doc_040",
+    "title": "Elden Ring Souls-like Adventure",
+    "content": "Elden Ring combines FromSoftware's challenging Souls formula with George R.R. Martin's worldbuilding in an open-world setting. The game features intricate boss battles, deep lore, and player freedom to explore the Lands Between. Elden Ring won numerous Game of the Year awards for its innovative approach to the Souls-like genre.",
+    "category": "Gaming",
+    "tags": ["elden-ring", "souls-like", "fromsoft", "martin", "open-world"]
+  },
+  {
+    "id": "doc_041",
+    "title": "God of War Ragnarök Norse Saga",
+    "content": "God of War Ragnarök concludes Kratos and Atreus's Norse mythology journey with exceptional storytelling, combat refinements, and stunning visuals. The game explores themes of fatherhood, destiny, and change while delivering spectacular boss battles and emotional character development. Praised for accessibility features and inclusive design.",
+    "category": "Gaming",
+    "tags": ["god-of-war", "ragnarok", "kratos", "norse", "mythology"]
+  },
+  {
+    "id": "doc_042",
+    "title": "Earl Grey Tea Varieties",
+    "content": "Earl Grey Supreme blends Ceylon and Indian black teas with bergamot oil, cornflower petals, and lavender for a sophisticated flavor profile. Medium caffeine content (40-50mg per cup) provides gentle energy boost. Steep 3-5 minutes at 200°F for optimal extraction. The bergamot oil provides digestive benefits and aromatic citrus notes.",
+    "category": "Tea",
+    "tags": ["earl-grey", "bergamot", "ceylon", "black-tea", "lavender"]
+  },
+  {
+    "id": "doc_043",
+    "title": "Dragon Well Green Tea",
+    "content": "Longjing (Dragon Well) represents premium Chinese green tea with sweet, mellow flavor and fresh grass notes. Grown in Hangzhou's West Lake region, this tea features flat, sword-shaped leaves and delicate processing. Low-medium caffeine (25-35mg) and high antioxidant content support metabolism and heart health. Steep 2-3 minutes at 175°F.",
+    "category": "Tea",
+    "tags": ["dragon-well", "longjing", "green-tea", "chinese", "antioxidants"]
+  },
+  {
+    "id": "doc_044",
+    "title": "Pu-erh Fermented Tea",
+    "content": "Pu-erh tea from Yunnan Province undergoes unique fermentation process creating complex, earthy flavors that improve with age. Available in raw (sheng) and ripe (shou) varieties, Pu-erh supports digestion and may help reduce cholesterol. Traditional tea cakes can be stored for decades, developing deeper flavor profiles over time.",
+    "category": "Tea",
+    "tags": ["pu-erh", "fermented", "yunnan", "aged", "digestion"]
+  },
+  {
+    "id": "doc_045",
+    "title": "Chamomile Herbal Tea",
+    "content": "Chamomile flowers create caffeine-free herbal tea known for calming properties and gentle apple-like flavor. Popular as bedtime tea for promoting relaxation and better sleep quality. Contains apigenin antioxidant that may reduce anxiety and inflammation. Steep 5-7 minutes with boiling water for full herbal extraction.",
+    "category": "Tea",
+    "tags": ["chamomile", "herbal", "caffeine-free", "relaxation", "sleep"]
+  },
+  {
+    "id": "doc_046",
+    "title": "Marie Curie Scientific Pioneer",
+    "content": "Marie Curie (1867-1934) became the first woman to win a Nobel Prize and remains the only person to win Nobel Prizes in two different sciences - Physics (1903) and Chemistry (1911). Her discoveries of polonium and radium revolutionized understanding of radioactivity. Despite facing gender discrimination, she founded the Radium Institute and advanced cancer treatment research.",
+    "category": "History",
+    "tags": ["marie-curie", "nobel-prize", "radioactivity", "women-in-science", "physics"]
+  },
+  {
+    "id": "doc_047",
+    "title": "Leonardo da Vinci Renaissance Genius",
+    "content": "Leonardo da Vinci (1452-1519) epitomized the Renaissance ideal as artist, scientist, engineer, and inventor. His masterpieces include the Mona Lisa and The Last Supper, while his scientific notebooks contain designs for flying machines, tanks, and anatomical studies centuries ahead of their time. His insatiable curiosity and interdisciplinary approach continue inspiring innovation.",
+    "category": "History",
+    "tags": ["leonardo", "renaissance", "mona-lisa", "inventor", "anatomy"]
+  },
+  {
+    "id": "doc_048",
+    "title": "Albert Einstein Theoretical Physics",
+    "content": "Albert Einstein (1879-1955) revolutionized physics with theories of special and general relativity, explaining space, time, and gravity. His famous equation E=mc² revealed the relationship between mass and energy. Einstein's work on the photoelectric effect earned the 1921 Nobel Prize in Physics and laid foundations for quantum mechanics.",
+    "category": "History",
+    "tags": ["einstein", "relativity", "physics", "nobel-prize", "quantum"]
+  },
+  {
+    "id": "doc_049",
+    "title": "Nelson Mandela Anti-Apartheid Leader",
+    "content": "Nelson Mandela (1918-2013) led South Africa's transition from apartheid to democracy through decades of struggle, including 27 years in prison. As President (1994-1999), he promoted reconciliation and established the Truth and Reconciliation Commission. Mandela's commitment to forgiveness and unity earned him the Nobel Peace Prize and global admiration.",
+    "category": "History",
+    "tags": ["mandela", "apartheid", "south-africa", "democracy", "reconciliation"]
+  },
+  {
+    "id": "doc_050",
+    "title": "Stanford Computer Science Master's Program",
+    "content": "Stanford University's Master of Science in Computer Science ranks among the world's top programs, covering algorithms, machine learning, artificial intelligence, and computer systems. Located in Silicon Valley, students benefit from industry connections, research opportunities, and startup ecosystem. Admission requires strong academic background, GRE scores, research experience, and compelling personal statements.",
+    "category": "Education",
+    "tags": ["stanford", "computer-science", "masters", "silicon-valley", "ai"]
+  },
+  {
+    "id": "doc_051",
+    "title": "MIT Data Science Programs",
+    "content": "Massachusetts Institute of Technology offers cutting-edge data science education through multiple programs including the Master of Business Analytics and PhD in Computer Science. MIT's interdisciplinary approach combines statistics, machine learning, and domain expertise. Students work on real-world problems with industry partners and access world-class faculty and resources.",
+    "category": "Education",
+    "tags": ["mit", "data-science", "analytics", "statistics", "interdisciplinary"]
+  },
+  {
+    "id": "doc_052",
+    "title": "Harvard Business School MBA",
+    "content": "Harvard Business School's MBA program develops leaders through case-method learning, diverse cohorts, and extensive alumni networks. The two-year program covers strategy, finance, marketing, and operations while emphasizing leadership development and ethical decision-making. HBS graduates pursue careers in consulting, finance, technology, and entrepreneurship.",
+    "category": "Education",
+    "tags": ["harvard", "mba", "business", "case-method", "leadership"]
+  },
+  {
+    "id": "doc_053",
+    "title": "Carnegie Mellon Robotics Institute",
+    "content": "Carnegie Mellon University's Robotics Institute pioneers autonomous systems, computer vision, and human-robot interaction. Graduate programs include Master's and PhD in Robotics with specializations in perception, planning, and control. Students work on cutting-edge research from self-driving cars to space exploration robots with world-renowned faculty.",
+    "category": "Education",
+    "tags": ["carnegie-mellon", "robotics", "autonomous", "computer-vision", "ai"]
+  },
+  {
+    "id": "doc_054",
+    "title": "Confirmation Bias in Decision Making",
+    "content": "Confirmation bias represents the tendency to search for, interpret, and remember information that confirms pre-existing beliefs while ignoring contradictory evidence. This cognitive bias affects investment decisions, hiring practices, and scientific research. Mitigation strategies include actively seeking disconfirming evidence, considering alternative viewpoints, and using structured decision-making frameworks.",
+    "category": "Psychology",
+    "tags": ["confirmation-bias", "cognitive", "decision-making", "beliefs", "evidence"]
+  },
+  {
+    "id": "doc_055",
+    "title": "Anchoring Bias in Negotiations",
+    "content": "Anchoring bias occurs when individuals rely too heavily on the first piece of information received (the anchor) when making decisions. In negotiations, initial offers strongly influence final agreements regardless of their reasonableness. Combat anchoring by researching fair market values, setting personal reference points, and questioning initial anchors before responding.",
+    "category": "Psychology",
+    "tags": ["anchoring-bias", "negotiations", "first-impression", "reference-points", "judgment"]
+  },
+  {
+    "id": "doc_056",
+    "title": "Dunning-Kruger Effect",
+    "content": "The Dunning-Kruger effect describes how people with limited knowledge or competence in a domain overestimate their own knowledge or competence in that domain. This cognitive bias results from inability to recognize one's own incompetence and accurately assess others' competence. Education and expertise development help mitigate this bias through improved self-awareness.",
+    "category": "Psychology",
+    "tags": ["dunning-kruger", "overconfidence", "competence", "self-awareness", "expertise"]
+  },
+  {
+    "id": "doc_057",
+    "title": "Loss Aversion Psychology",
+    "content": "Loss aversion explains why people feel losses more intensely than equivalent gains, typically by a factor of 2:1. This psychological principle influences investment behavior, consumer choices, and risk-taking decisions. Understanding loss aversion helps in marketing, product design, and personal finance decisions by framing choices in terms of avoiding losses rather than achieving gains.",
+    "category": "Psychology",
+    "tags": ["loss-aversion", "behavioral-economics", "risk", "investment", "psychology"]
+  },
+  {
+    "id": "doc_058",
+    "title": "Stoicism and Emotional Resilience",
+    "content": "Stoicism, founded in ancient Athens, teaches that virtue is the only true good and that external events cannot harm one's character. Key principles include focusing on what you can control, accepting what you cannot, and maintaining rational responses to adversity. Modern applications include cognitive behavioral therapy and mindfulness practices for emotional resilience.",
+    "category": "Philosophy",
+    "tags": ["stoicism", "virtue", "emotional-resilience", "control", "rationality"]
+  },
+  {
+    "id": "doc_059",
+    "title": "Existentialism and Authentic Living",
+    "content": "Existentialism emphasizes individual existence, freedom, and choice, asserting that humans create their own meaning and essence through authentic actions. Key thinkers include Kierkegaard, Nietzsche, Sartre, and Camus. Existentialism influences psychology, literature, and ethics by highlighting personal responsibility, anxiety, and the search for authentic self-expression.",
+    "category": "Philosophy",
+    "tags": ["existentialism", "authenticity", "freedom", "sartre", "responsibility"]
+  },
+  {
+    "id": "doc_060",
+    "title": "Utilitarianism and Greatest Good",
+    "content": "Utilitarianism, developed by Jeremy Bentham and John Stuart Mill, judges actions by their consequences and seeks the greatest happiness for the greatest number of people. This consequentialist approach influences public policy, business ethics, and moral decision-making. Critics argue it may justify harmful acts if they produce greater overall benefit.",
+    "category": "Philosophy",
+    "tags": ["utilitarianism", "bentham", "mill", "consequentialism", "happiness"]
+  },
+  {
+    "id": "doc_061",
+    "title": "Virtue Ethics and Character Development",
+    "content": "Virtue ethics, traced to Aristotle, focuses on character rather than actions or consequences, asking 'What kind of person should I be?' rather than 'What should I do?' Virtues like courage, honesty, and compassion are developed through practice and habit. Modern virtue ethics influences education, leadership development, and professional ethics.",
+    "category": "Philosophy",
+    "tags": ["virtue-ethics", "aristotle", "character", "courage", "moral-development"]
+  },
+  {
+    "id": "doc_062",
+    "title": "1984 by George Orwell",
+    "content": "George Orwell's dystopian masterpiece '1984' depicts totalitarian surveillance state where Big Brother monitors citizens through telescreens and Thought Police. The novel introduces concepts like doublethink, newspeak, and Room 101 while exploring themes of truth, reality manipulation, and individual resistance. Orwell's warnings about authoritarianism remain relevant in the digital age.",
+    "category": "Literature",
+    "tags": ["orwell", "1984", "dystopian", "surveillance", "totalitarian"]
+  },
+  {
+    "id": "doc_063",
+    "title": "To Kill a Mockingbird by Harper Lee",
+    "content": "Harper Lee's Pulitzer Prize-winning novel addresses racial injustice in Depression-era Alabama through Scout Finch's coming-of-age story. Atticus Finch's defense of Tom Robinson and the children's encounters with Boo Radley explore themes of prejudice, moral courage, and loss of innocence. The novel's impact on American literature and civil rights discourse remains significant.",
+    "category": "Literature",
+    "tags": ["harper-lee", "mockingbird", "racial-justice", "atticus-finch", "pulitzer"]
+  },
+  {
+    "id": "doc_064",
+    "title": "Pride and Prejudice by Jane Austen",
+    "content": "Jane Austen's romantic novel critiques 19th-century English society through Elizabeth Bennet's relationship with Mr. Darcy. The story explores themes of class, marriage, and personal growth while showcasing Austen's wit and social commentary. The novel's enduring popularity demonstrates timeless appeal of its characters and themes about love overcoming social prejudices.",
+    "category": "Literature",
+    "tags": ["jane-austen", "romance", "elizabeth-bennet", "social-criticism", "19th-century"]
+  },
+  {
+    "id": "doc_065",
+    "title": "The Great Gatsby by F. Scott Fitzgerald",
+    "content": "F. Scott Fitzgerald's American classic captures the Jazz Age's excess and disillusionment through Jay Gatsby's pursuit of the American Dream. Set in 1920s New York, the novel explores themes of wealth, love, and moral decay while critiquing American materialism. Nick Carraway's narration reveals the hollow pursuit of status and the impossibility of recapturing the past.",
+    "category": "Literature",
+    "tags": ["fitzgerald", "gatsby", "american-dream", "jazz-age", "materialism"]
+  }
+]
