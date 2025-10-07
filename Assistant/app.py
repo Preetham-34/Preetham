@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Include 'Assistant' folder in path since files are there
 # DATA_DIR = os.path.join(BASE_DIR, "Assistant")
 
-courses_path = os.path.join(DATA_DIR, "courses.json")
-users_path = os.path.join(DATA_DIR, "users.json")
-faq_path = os.path.join(DATA_DIR, "faq.json")
+courses_path = os.path.join(BASE_DIR, "courses.json")
+users_path = os.path.join(BASE_DIR, "users.json")
+faq_path = os.path.join(BASE_DIR, "faq.json")
 
 def load_sample_data(file_path):
     with open(file_path, "r", encoding="utf-8") as f:
