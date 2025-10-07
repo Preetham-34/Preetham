@@ -17,36 +17,19 @@ from faq_system import FAQSystem
 import os
 import json
 
-print("Current dir:", os.getcwd())
-print("Files:", os.listdir('.'))
-with open('courses.json', 'r') as f:
-    print("Loaded courses.json successfully!")
-# Get the absolute directory of current script
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Construct absolute paths to your JSON files
-courses_path = os.path.join(BASE_DIR, "courses.json")
-users_path = os.path.join(BASE_DIR, "users.json")
-faq_path = os.path.join(BASE_DIR, "faq.json")
+# Include 'Assistant' folder in path since files are there
+DATA_DIR = os.path.join(BASE_DIR, "Assistant")
 
-# Debug prints to verify file locations and contents
-print("[DEBUG] BASE_DIR:", BASE_DIR)
-print("[DEBUG] Files in BASE_DIR:", os.listdir(BASE_DIR))
-print("[DEBUG] courses.json path:", courses_path)
-print("[DEBUG] users.json path:", users_path)
-print("[DEBUG] faq.json path:", faq_path)
+courses_path = os.path.join(DATA_DIR, "courses.json")
+users_path = os.path.join(DATA_DIR, "users.json")
+faq_path = os.path.join(DATA_DIR, "faq.json")
 
 def load_sample_data(file_path):
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        print(f"[DEBUG] Successfully loaded {file_path} with {len(data)} records")
-        return data
-    except Exception as e:
-        print(f"[ERROR] Failed to load {file_path}: {e}")
-        return []
+    with open(file_path, "r", encoding="utf-8") as f:
+        return json.load(f)
 
-# Load all three datasets with absolute paths
 courses_data = load_sample_data(courses_path)
 users_data = load_sample_data(users_path)
 faq_data = load_sample_data(faq_path)
