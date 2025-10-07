@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # This is /mount/src/pree
 # So need to prepend 'Assistant' if code runs from parent directory or deal with different runtime cwd
 
 # Proposed:
-DATA_DIR = os.path.join(BASE_DIR)  # If code runs from Assistant folder, keep as is
+#DATA_DIR = os.path.join(BASE_DIR)  # If code runs from Assistant folder, keep as is
 # or
-#DATA_DIR = os.path.join(BASE_DIR, "Assistant")  # If code runs from parent folder, add Assistant
+DATA_DIR = os.path.join(BASE_DIR, "Assistant")  # If code runs from parent folder, add Assistant
 
 # Since BASE_DIR is already Assistant, your files are directly under BASE_DIR:
 courses_path = os.path.join(DATA_DIR, "courses.json")
