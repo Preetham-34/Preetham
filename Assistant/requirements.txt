@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+pydantic
+sentence-transformers
+pinecone
+numpy
+pandas
+python-multipart
+streamlit
+requests
+python-dotenv
+openai
+transformers
+torch>=2.0.0
+scikit-learn
+httpx
