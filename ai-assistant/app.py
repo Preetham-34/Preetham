@@ -38,56 +38,71 @@ st.set_page_config(
 st.markdown("""
 <style>
     .main-header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #f4f4f4;
         padding: 2rem;
         border-radius: 10px;
-        color: white;
+        color: #222;
         text-align: center;
         margin-bottom: 2rem;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-    
-    .feature-card {
-        background: #f8f9fa;
+    .feature-card, .recommendation-card {
+        background: #fff;
         padding: 1.5rem;
         border-radius: 10px;
-        border-left: 4px solid #667eea;
+        border-left: 4px solid #888;
         margin: 1rem 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.07);
+        color: #222;
     }
-    
     .chat-message {
-        background: #e3f2fd;
+        background: #f6f6f6;
         padding: 1rem;
         border-radius: 10px;
         margin: 0.5rem 0;
-        border-left: 4px solid #2196f3;
+        border-left: 4px solid #111;
+        color: #222;
     }
-    
-    .recommendation-card {
-        background: #f3e5f5;
-        padding: 1rem;
-        border-radius: 8px;
-        margin: 0.5rem 0;
-        border-left: 3px solid #9c27b0;
-    }
-    
     .metric-card {
-        background: #e8f5e8;
+        background: #f8f8f8;
         padding: 1rem;
         border-radius: 8px;
         text-align: center;
-        border: 1px solid #4caf50;
+        border: 1px solid #bbb;
+        color: #222;
     }
-    
     .debug-info {
-        background: #fff3cd;
-        border: 1px solid #ffeaa7;
+        background: #f6f6f6;
+        border: 1px solid #ccc;
         border-radius: 5px;
         padding: 1rem;
         margin: 1rem 0;
         font-family: monospace;
         font-size: 0.9rem;
+        color: #111;
+    }
+    .st-cg {background: #fff;}
+    /* Remove all colored buttons and make them grayscale */
+    .stButton > button {
+        background: #e0e0e0;
+        color: #1a1a1a;
+        border: 1px solid #888;
+        border-radius: 5px;
+    }
+    .stButton > button:hover {
+        background: #222;
+        color: #fff;
+    }
+    /* Remove Streamlit colored header underline for tabs */
+    .stTabs [data-baseweb="tab-list"] button {
+        border-bottom: 2px solid #222 !important;
+        color: #222 !important;
+        background: #fff !important;
+    }
+    .stTabs [data-baseweb="tab-list"] button[aria-selected="true"] {
+        border-bottom: 4px solid #222 !important;
+        color: #111 !important;
+        background: #f4f4f4 !important;
     }
 </style>
 """, unsafe_allow_html=True)
